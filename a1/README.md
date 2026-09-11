@@ -127,7 +127,8 @@ earn out of 9, and which single criterion costs them the most?
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Each Criterion is worth 3 points but Criterion 3 seems the hardest since rather than being based on completeness or following formatting. It's built around correctness.
+Late assignments after 3 days cannot earn correctness but can earn completeness.
 ```
 
 **(b)** I leave a comment on your submission suggesting a cleaner way to write
@@ -136,7 +137,7 @@ one of your regexes. How many points does that comment cost you?
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Writing a unclean regex doesn't cost points.
 ```
 
 
@@ -150,7 +151,7 @@ Short answers. One or two sentences each.
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Semantics is the meaning of the language, while syntax is the notation rules.
 ```
 
 **(b)** Lexical analysis is the first of three phases. What does it produce,
@@ -159,7 +160,7 @@ and what consumes what it produces?
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Lexical analysis produces tokens which are then consumed by syntactic analysis.
 ```
 
 **(c)** A token is an abstraction; a lexeme is an instance of it.
@@ -176,7 +177,7 @@ here; the point is to find your own.
 ### ANSWER
 
 ```
-Replace this line with your answer.
+A token called word which is defined in regex as [a-z]+ could contain lexeme, cat, dog, or lizard. ^cat$ will only have one lexeme, that being cat. This means this token can only be interpreted as cat with the exact txt cat.
 ```
 
 
