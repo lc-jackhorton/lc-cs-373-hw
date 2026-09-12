@@ -1,14 +1,15 @@
 # Window powershell virtual enviroment activated with .venv\Scripts\Activate.ps1
 
 
-# Command to stop computer from looking outside of virtual enviroment
+# Command to stop windows computer from looking outside of virtual enviroment
 # plcc-scan .\.venv\input.txt --spec .\.venv\spec.plcc
 
-skip COMMENT '\#.*$'
+skip COMMENT '#.*$'
 skip WS '\s+'
 token THIS 'this'
 token THAT 'that'
 token THE 'the'
 token OTHER 'other'
 token THING 'thing'
-token ID '!|\w+'
+#token ID '!|\w+'
+token ID '\w+'
