@@ -297,7 +297,7 @@ very end. Every word should be coming out as an `ID`.
 #### ANSWER
 
 ```
-skip COMMENT '\#.*$'
+skip COMMENT '#.*$'
 skip WS '\s+'
 
 other is one word, so it's a token, anything after the hash is ignored so the other others are not tokens
@@ -326,7 +326,7 @@ that make sense?
 #### ANSWER
 
 ```
-Replace this line with your answer.
+I think the difference you're referring to is that plcc-scan and plcc-scan < input.txt both result in the -: being displayed rather than the file name. plcc-scan filename causes the actual filename to be displayed. 
 ```
 
 Go back to `plcc-scan input` for the rest of the lab.
@@ -456,7 +456,17 @@ not matter. `spec.plcc` is the one that gets graded, so leave it in `q3/`.
 #### ANSWER
 
 ```
-Replace this line with your answer.
+#In order to get this to match expected I had to comment out my ! mark filter
+
+skip COMMENT '#.*$'
+skip WS '\s+'
+token THIS 'this'
+token THAT 'that'
+token THE 'the'
+token OTHER 'other'
+token THING 'thing'
+#token ID '!|\w+'
+token ID '\w+'
 ```
 
 ---
