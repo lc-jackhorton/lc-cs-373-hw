@@ -240,9 +240,11 @@ empty specification does to the input.
 #### ANSWER
 
 ```
-Replace this line with your answer.
-```
+input.txt:1:1: error: unrecognized character '#'
+input.txt:1:2: error: unrecognized character ' '
+input.txt:1:3: error: unrecognized character 'e'
 
+A empty specification causes the program to not know what any of the characters are supposed to represent as tokens, it will spit out a error for each character.
 ---
 
 ### Step 2 — One rule
@@ -262,7 +264,7 @@ rather than simply ignored?**
 #### ANSWER
 
 ```
-Replace this line with your answer.
+The regex is selecting numbers, letters, and underscores while ignoring spaces and hashes. There are errors because we never told the lexical analysis to not analyze certain characters. 
 ```
 
 ---
@@ -276,7 +278,7 @@ Add a `WS` rule that skips whitespace. Run again.
 #### ANSWER
 
 ```
-Replace this line with your answer.
+Whitespaces are now being ignored but the hashes are still unrecognized.
 ```
 
 ---
@@ -295,8 +297,13 @@ very end. Every word should be coming out as an `ID`.
 #### ANSWER
 
 ```
-Replace this line with your answer.
+skip COMMENT '\#.*$'
+skip WS '\s+'
+
+other is one word, so it's a token, anything after the hash is ignored so the other others are not tokens
+
 ```
+
 
 ---
 
@@ -338,7 +345,11 @@ the token names `THIS`, `THAT`, `THE`, `OTHER`, and `THING`. Put all five
 #### ANSWER — your prediction, then what actually happened
 
 ```
-Replace this line with your answer.
+Prediction
+The new tokens and old token will contest words, since they contest the same words, they are trying to select the same length of characters. This means that the old token, listed higher in the line of the plcc file will end up winning. Thus causing the tokens to all be IDs.
+
+I was correct, this on line 2 came out as a ID token 
+
 ```
 
 ---
@@ -377,10 +388,13 @@ Which rule wins, and what decides it?
 **(b)** For the word `otherwise`, two rules also match. Which wins, and what
 decides it *this* time? Would reordering your rules change this one?
 
+
 #### ANSWER
 
 ```
-Replace this line with your answer.
+a) Both match 4 characters so it's the order in the plcc file that decides which specification wins
+
+b) Otherwise is longer, thus ID token wins rather than OTHER token, reordering rules would not change this
 ```
 
 ---
@@ -399,7 +413,9 @@ an error actually means here, and name one rule you could add that would make
 #### ANSWER
 
 ```
-Replace this line with your answer.
+I predict underscore becomes a ID token, and exclamation mark becomes a error since \+w doesn't select exclamation marks
+
+My solution was to change the regex for ID to   !|\w+   which means either select words or select the exclamation mark, this makes exclamation mark it's own ID token
 ```
 
 ---
