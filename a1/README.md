@@ -509,7 +509,10 @@ with and which of the two tie-breaking behaviors from step 7 is responsible.
 #### ANSWER
 
 ```
-Replace this line with your answer.
+I put the number rule on the third line right after the skips.
+Putting it lower then token ID '\w+' causes the number 7 to be a ID token since 7 falls into both the ID token and NUM token criterion, both are contesting the same amount for their token, therefore the tie breaker is whichever definition is first in the plcc file. 
+
+Moving the number rule does not change this fact since the tie breaking uses length first and then order. 12345xxx has 8 characters which fall into the ID token while only 5 characters fall into the NUM token, thus priority is given to ID token.
 ```
 
 `output_extra` is scratch, like `output`. Leave `extra.plcc` in `q3/`
