@@ -245,7 +245,7 @@ input.txt:1:2: error: unrecognized character ' '
 input.txt:1:3: error: unrecognized character 'e'
 
 A empty specification causes the program to not know what any of the characters are supposed to represent as tokens, it will spit out a error for each character.
----
+```
 
 ### Step 2 — One rule
 
