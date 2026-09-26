@@ -663,7 +663,13 @@ and no method ever calls `__str__` by name. Trace `add1(x)`: starting from
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Program is called
+Program returns the string of self.exp, this means it's trying to call the string function for expressions
+self.exp is overall defined by PrimappExp since add1 is a PRIMOP
+__str__ is called and returns f"{self.primop}({self.rands})"
+So now we need the string version of self.primop and self.rands so this can return as a string
+Add1Prim string method is called returning add1, Rands string method returns  ",".join(str(e) for e in self.expList)
+",".join(str(e) for e in self.expList) will need to get the string for each of e, in a expression list of Rands. This means the string is getting called for the VarExp inside the Rands. VarExp returns self.symbol.lexeme which is just x, that then is converted to a string.
 ```
 
 **(d)** `sub1(x, 3)` is accepted, and `plcc-rep` prints it back. Nothing in
