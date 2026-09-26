@@ -1,0 +1,431 @@
+{
+  "lexical": {
+    "ruleList": [
+      {
+        "line": {
+          "string": "skip  WS          '\\s+'\n",
+          "number": 6,
+          "file": "spec.plcc"
+        },
+        "name": "WS",
+        "pattern": "\\s+",
+        "isSkip": true
+      },
+      {
+        "line": {
+          "string": "token THIS        'this'\n",
+          "number": 7,
+          "file": "spec.plcc"
+        },
+        "name": "THIS",
+        "pattern": "this",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token IS          'is'\n",
+          "number": 8,
+          "file": "spec.plcc"
+        },
+        "name": "IS",
+        "pattern": "is",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token EACH        'each'\n",
+          "number": 9,
+          "file": "spec.plcc"
+        },
+        "name": "EACH",
+        "pattern": "each",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token HAS         'has'\n",
+          "number": 10,
+          "file": "spec.plcc"
+        },
+        "name": "HAS",
+        "pattern": "has",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token MULTIPLE    'multiple'\n",
+          "number": 11,
+          "file": "spec.plcc"
+        },
+        "name": "MULTIPLE",
+        "pattern": "multiple",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token OCCURRENCES 'occurrences'\n",
+          "number": 12,
+          "file": "spec.plcc"
+        },
+        "name": "OCCURRENCES",
+        "pattern": "occurrences",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token ME          'me'\n",
+          "number": 13,
+          "file": "spec.plcc"
+        },
+        "name": "ME",
+        "pattern": "me",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token AM          'am'\n",
+          "number": 14,
+          "file": "spec.plcc"
+        },
+        "name": "AM",
+        "pattern": "am",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token TAKING      'taking'\n",
+          "number": 15,
+          "file": "spec.plcc"
+        },
+        "name": "TAKING",
+        "pattern": "taking",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token AND         'and'\n",
+          "number": 16,
+          "file": "spec.plcc"
+        },
+        "name": "AND",
+        "pattern": "and",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token VAR         '\\$\\w+'\n",
+          "number": 17,
+          "file": "spec.plcc"
+        },
+        "name": "VAR",
+        "pattern": "\\$\\w+",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token OF          'of'\n",
+          "number": 18,
+          "file": "spec.plcc"
+        },
+        "name": "OF",
+        "pattern": "of",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token CSIT        'CS\\d+'\n",
+          "number": 19,
+          "file": "spec.plcc"
+        },
+        "name": "CSIT",
+        "pattern": "CS\\d+",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token DOT         '\\.'\n",
+          "number": 20,
+          "file": "spec.plcc"
+        },
+        "name": "DOT",
+        "pattern": "\\.",
+        "isSkip": false
+      }
+    ]
+  },
+  "syntax": {
+    "rules": [
+      {
+        "line": {
+          "string": "<Start:One>    ::= <Blah>\n",
+          "number": 22,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Start",
+          "isTerminal": false,
+          "altName": "One",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Blah",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Start:Two>    ::= <Many>\n",
+          "number": 23,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Start",
+          "isTerminal": false,
+          "altName": "Two",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Many",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Start:Three>  ::= <Classes>\n",
+          "number": 24,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Start",
+          "isTerminal": false,
+          "altName": "Three",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Classes",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Blah:Goo>     ::= THIS <VAR> IS <Silly>                                   # (a)\n",
+          "number": 26,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Blah",
+          "isTerminal": false,
+          "altName": "Goo",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "THIS",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "VAR",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          },
+          {
+            "name": "IS",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Silly",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Many>         **= EACH <Rule> HAS MULTIPLE OCCURRENCES <OF> <Stuff>       # (b)\n",
+          "number": 27,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Many",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "EACH",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Rule",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "HAS",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "MULTIPLE",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "OCCURRENCES",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "OF",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          },
+          {
+            "name": "Stuff",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ],
+        "separator": null
+      },
+      {
+        "line": {
+          "string": "<Classes>      ::= ME AM TAKING <CSIT:c1> <CSIT:c2> AND <CSIT:c3>          # (c)\n",
+          "number": 28,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Classes",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "ME",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "AM",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "TAKING",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "CSIT",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": "c1"
+          },
+          {
+            "name": "CSIT",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": "c2"
+          },
+          {
+            "name": "AND",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "CSIT",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": "c3"
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Silly>        ::= DOT\n",
+          "number": 30,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Silly",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "DOT",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Rule>         ::= DOT\n",
+          "number": 31,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Rule",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "DOT",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Stuff>        ::= DOT\n",
+          "number": 32,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Stuff",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "DOT",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      }
+    ]
+  },
+  "semantics": {
+    "language": "Python",
+    "codeFragmentList": []
+  }
+}

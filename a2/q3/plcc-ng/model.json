@@ -1,0 +1,77 @@
+{
+  "start": "Lonn",
+  "classes": [
+    {
+      "name": "Lonn",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "num",
+          "type": "Token",
+          "is_list": false
+        },
+        {
+          "name": "nums",
+          "type": "Nums",
+          "is_list": false
+        }
+      ],
+      "rule_name": "Lonn"
+    },
+    {
+      "name": "Nums",
+      "abstract": true,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Nums"
+    },
+    {
+      "name": "More",
+      "abstract": false,
+      "extends": "Nums",
+      "fields": [
+        {
+          "name": "num",
+          "type": "Token",
+          "is_list": false
+        },
+        {
+          "name": "nums",
+          "type": "Nums",
+          "is_list": false
+        }
+      ],
+      "rule_name": "More"
+    },
+    {
+      "name": "Done",
+      "abstract": false,
+      "extends": "Nums",
+      "fields": [],
+      "rule_name": "Done"
+    }
+  ],
+  "semantic_sections": [
+    {
+      "language": "python",
+      "fragments": [
+        {
+          "class_name": "Lonn",
+          "kind": "body",
+          "body": "def _run(self):\n    first = int(self.num.lexeme)\n    return str(self.nums.sum(first))"
+        },
+        {
+          "class_name": "More",
+          "kind": "body",
+          "body": "def sum(self, total):\n    total = int(self.num.lexeme) + total\n    return self.nums.sum(total)"
+        },
+        {
+          "class_name": "Done",
+          "kind": "body",
+          "body": "def sum(self, total):\n    return total"
+        }
+      ]
+    }
+  ]
+}

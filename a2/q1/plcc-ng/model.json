@@ -1,0 +1,149 @@
+{
+  "start": "Start",
+  "classes": [
+    {
+      "name": "Start",
+      "abstract": true,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Start"
+    },
+    {
+      "name": "One",
+      "abstract": false,
+      "extends": "Start",
+      "fields": [
+        {
+          "name": "blah",
+          "type": "Blah",
+          "is_list": false
+        }
+      ],
+      "rule_name": "One"
+    },
+    {
+      "name": "Two",
+      "abstract": false,
+      "extends": "Start",
+      "fields": [
+        {
+          "name": "many",
+          "type": "Many",
+          "is_list": false
+        }
+      ],
+      "rule_name": "Two"
+    },
+    {
+      "name": "Three",
+      "abstract": false,
+      "extends": "Start",
+      "fields": [
+        {
+          "name": "classes",
+          "type": "Classes",
+          "is_list": false
+        }
+      ],
+      "rule_name": "Three"
+    },
+    {
+      "name": "Blah",
+      "abstract": true,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Blah"
+    },
+    {
+      "name": "Goo",
+      "abstract": false,
+      "extends": "Blah",
+      "fields": [
+        {
+          "name": "var",
+          "type": "Token",
+          "is_list": false
+        },
+        {
+          "name": "silly",
+          "type": "Silly",
+          "is_list": false
+        }
+      ],
+      "rule_name": "Goo"
+    },
+    {
+      "name": "Many",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "ruleList",
+          "type": "Rule",
+          "is_list": true
+        },
+        {
+          "name": "ofList",
+          "type": "Token",
+          "is_list": true
+        },
+        {
+          "name": "stuffList",
+          "type": "Stuff",
+          "is_list": true
+        }
+      ],
+      "rule_name": "Many"
+    },
+    {
+      "name": "Classes",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "c1",
+          "type": "Token",
+          "is_list": false
+        },
+        {
+          "name": "c2",
+          "type": "Token",
+          "is_list": false
+        },
+        {
+          "name": "c3",
+          "type": "Token",
+          "is_list": false
+        }
+      ],
+      "rule_name": "Classes"
+    },
+    {
+      "name": "Silly",
+      "abstract": false,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Silly"
+    },
+    {
+      "name": "Rule",
+      "abstract": false,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Rule"
+    },
+    {
+      "name": "Stuff",
+      "abstract": false,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Stuff"
+    }
+  ],
+  "semantic_sections": [
+    {
+      "language": "python",
+      "fragments": []
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "is_ll1": true,
+  "start_symbol": "Start",
+  "first_sets": {
+    "Balanced": [
+      "",
+      "LPAREN"
+    ],
+    "Start": [
+      "AT",
+      "LPAREN"
+    ]
+  },
+  "follow_sets": {
+    "Balanced": [
+      "AT",
+      "RPAREN"
+    ],
+    "Start": [
+      "eof"
+    ]
+  },
+  "predict_sets": {
+    "Balanced": [
+      [
+        "LPAREN"
+      ],
+      [
+        "AT",
+        "RPAREN"
+      ]
+    ],
+    "Start": [
+      [
+        "AT",
+        "LPAREN"
+      ]
+    ]
+  },
+  "parse_table": {
+    "Start": {
+      "AT": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "Balanced",
+            "field": "balanced"
+          },
+          {
+            "symbol": "AT",
+            "field": null
+          }
+        ]
+      },
+      "LPAREN": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "Balanced",
+            "field": "balanced"
+          },
+          {
+            "symbol": "AT",
+            "field": null
+          }
+        ]
+      }
+    },
+    "Balanced": {
+      "LPAREN": {
+        "alt": "Pair",
+        "production": [
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Balanced",
+            "field": "inside"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Balanced",
+            "field": "after"
+          }
+        ]
+      },
+      "RPAREN": {
+        "alt": "Empty",
+        "production": []
+      },
+      "AT": {
+        "alt": "Empty",
+        "production": []
+      }
+    }
+  },
+  "conflicts": [],
+  "left_recursion": [],
+  "arbno": {}
+}

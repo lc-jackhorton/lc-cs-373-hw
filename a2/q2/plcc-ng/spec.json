@@ -1,0 +1,128 @@
+{
+  "lexical": {
+    "ruleList": [
+      {
+        "line": {
+          "string": "skip  WS     '\\s+'\n",
+          "number": 2,
+          "file": "spec.plcc"
+        },
+        "name": "WS",
+        "pattern": "\\s+",
+        "isSkip": true
+      },
+      {
+        "line": {
+          "string": "token LPAREN '\\('\n",
+          "number": 3,
+          "file": "spec.plcc"
+        },
+        "name": "LPAREN",
+        "pattern": "\\(",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token RPAREN '\\)'\n",
+          "number": 4,
+          "file": "spec.plcc"
+        },
+        "name": "RPAREN",
+        "pattern": "\\)",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token AT     '@'\n",
+          "number": 5,
+          "file": "spec.plcc"
+        },
+        "name": "AT",
+        "pattern": "@",
+        "isSkip": false
+      }
+    ]
+  },
+  "syntax": {
+    "rules": [
+      {
+        "line": {
+          "string": "<Start>          ::= <Balanced> AT\n",
+          "number": 7,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Start",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Balanced",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "AT",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Balanced:Pair>  ::= LPAREN <Balanced:inside> RPAREN <Balanced:after>\n",
+          "number": 8,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Balanced",
+          "isTerminal": false,
+          "altName": "Pair",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "LPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Balanced",
+            "isTerminal": false,
+            "altName": "inside",
+            "isCapturing": true
+          },
+          {
+            "name": "RPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Balanced",
+            "isTerminal": false,
+            "altName": "after",
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Balanced:Empty> ::=\n",
+          "number": 9,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Balanced",
+          "isTerminal": false,
+          "altName": "Empty",
+          "isCapturing": false
+        },
+        "rhsSymbolList": []
+      }
+    ]
+  },
+  "semantics": null
+}

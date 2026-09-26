@@ -1,0 +1,265 @@
+{
+  "is_ll1": true,
+  "start_symbol": "Start",
+  "first_sets": {
+    "Blah": [
+      "THIS"
+    ],
+    "Classes": [
+      "ME"
+    ],
+    "Rule": [
+      "DOT"
+    ],
+    "Silly": [
+      "DOT"
+    ],
+    "Start": [
+      "",
+      "EACH",
+      "ME",
+      "THIS"
+    ],
+    "Stuff": [
+      "DOT"
+    ]
+  },
+  "follow_sets": {
+    "Blah": [
+      "eof"
+    ],
+    "Classes": [
+      "eof"
+    ],
+    "Rule": [
+      "HAS"
+    ],
+    "Silly": [
+      "eof"
+    ],
+    "Start": [
+      "eof"
+    ],
+    "Stuff": [
+      "EACH",
+      "eof"
+    ]
+  },
+  "predict_sets": {
+    "Blah": [
+      [
+        "THIS"
+      ]
+    ],
+    "Classes": [
+      [
+        "ME"
+      ]
+    ],
+    "Rule": [
+      [
+        "DOT"
+      ]
+    ],
+    "Silly": [
+      [
+        "DOT"
+      ]
+    ],
+    "Start": [
+      [
+        "THIS"
+      ],
+      [
+        "EACH",
+        "eof"
+      ],
+      [
+        "ME"
+      ]
+    ],
+    "Stuff": [
+      [
+        "DOT"
+      ]
+    ]
+  },
+  "parse_table": {
+    "Start": {
+      "THIS": {
+        "alt": "One",
+        "production": [
+          {
+            "symbol": "Blah",
+            "field": "blah"
+          }
+        ]
+      },
+      "EACH": {
+        "alt": "Two",
+        "production": [
+          {
+            "symbol": "Many",
+            "field": "many"
+          }
+        ]
+      },
+      "eof": {
+        "alt": "Two",
+        "production": [
+          {
+            "symbol": "Many",
+            "field": "many"
+          }
+        ]
+      },
+      "ME": {
+        "alt": "Three",
+        "production": [
+          {
+            "symbol": "Classes",
+            "field": "classes"
+          }
+        ]
+      }
+    },
+    "Blah": {
+      "THIS": {
+        "alt": "Goo",
+        "production": [
+          {
+            "symbol": "THIS",
+            "field": null
+          },
+          {
+            "symbol": "VAR",
+            "field": "var"
+          },
+          {
+            "symbol": "IS",
+            "field": null
+          },
+          {
+            "symbol": "Silly",
+            "field": "silly"
+          }
+        ]
+      }
+    },
+    "Classes": {
+      "ME": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "ME",
+            "field": null
+          },
+          {
+            "symbol": "AM",
+            "field": null
+          },
+          {
+            "symbol": "TAKING",
+            "field": null
+          },
+          {
+            "symbol": "CSIT",
+            "field": "c1"
+          },
+          {
+            "symbol": "CSIT",
+            "field": "c2"
+          },
+          {
+            "symbol": "AND",
+            "field": null
+          },
+          {
+            "symbol": "CSIT",
+            "field": "c3"
+          }
+        ]
+      }
+    },
+    "Silly": {
+      "DOT": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "DOT",
+            "field": null
+          }
+        ]
+      }
+    },
+    "Rule": {
+      "DOT": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "DOT",
+            "field": null
+          }
+        ]
+      }
+    },
+    "Stuff": {
+      "DOT": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "DOT",
+            "field": null
+          }
+        ]
+      }
+    }
+  },
+  "conflicts": [],
+  "left_recursion": [],
+  "arbno": {
+    "Many": {
+      "rhs": [
+        {
+          "field": null,
+          "symbol": "EACH",
+          "is_terminal": true
+        },
+        {
+          "field": "ruleList",
+          "symbol": "Rule",
+          "is_terminal": false
+        },
+        {
+          "field": null,
+          "symbol": "HAS",
+          "is_terminal": true
+        },
+        {
+          "field": null,
+          "symbol": "MULTIPLE",
+          "is_terminal": true
+        },
+        {
+          "field": null,
+          "symbol": "OCCURRENCES",
+          "is_terminal": true
+        },
+        {
+          "field": "ofList",
+          "symbol": "OF",
+          "is_terminal": true
+        },
+        {
+          "field": "stuffList",
+          "symbol": "Stuff",
+          "is_terminal": false
+        }
+      ],
+      "separator": null,
+      "lookahead": [
+        "EACH"
+      ]
+    }
+  }
+}
