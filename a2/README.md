@@ -365,7 +365,16 @@ plcc-rep -s min.plcc input-1
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Prediction.
+Prints 2 because it's the minimum.
+
+What happens?
+_run(self)
+   self.nums.min(first)   |  takes in first number, 3, then compares it to each other number
+   this does a recursive call on self.nums.min() comparing all the numbers, then once it has found the smallest number
+   that's what gets returned by the DONE stage.
+
+It does return 2
 ```
 
 **(b)** `input-3` is `()`. Predict what happens, then run it. **Which of the
@@ -375,7 +384,14 @@ is the reason `()` is not a LONN program?
 ### ANSWER
 
 ```
-Replace this line with your answer.
+I predict since there is no first it will call min(self, best) with min(first) where first is empty but since no default best is set best will be empty and therefore cause a error.
+
+It actually said
+error: expected 'NUM', got 'RPAREN'
+So I guess I was too focused on the semantics phase when the problem comes up in syntax.
+
+This line <Lonn>       ::= LPAREN <NUM> <Nums> RPAREN
+Is the source of the problem. It clearly defines <NUM> as needing to be next before RPAREN
 ```
 
 **(c)** In `min.plcc`, change the `<` in `More.min` to `>`. Nothing else.
@@ -387,7 +403,9 @@ file. **What changed, and what did not?** Use the words *syntax* and
 ### ANSWER
 
 ```
-Replace this line with your answer.
+The syntax is read exactly the same way since the tokens are in the same places due to the same input and no modifications to syntax/tokens. The semantics are different, the > makes the code look for the largest number instead of smallest.
+
+I tested it and I got 5
 ```
 
 **(d)** `q3/sum.plcc` is the same language with a different meaning: the
@@ -411,7 +429,19 @@ as leaving it in the file.
 ### ANSWER
 
 ```
-Replace this line with your answer.
+The code returned
+None
+7
+None
+
+This is because the first and third inputs use more than 1 number so the MORE definition gets used but it's passed thus nothing is returned. Whereas for the second input there's only one number so that's what gets returned using the DONE definition.
+
+More
+%%%
+def sum(self, total):
+    total = int(self.num.lexeme) + total
+    return self.nums.sum(total)
+%%%
 ```
 
 
