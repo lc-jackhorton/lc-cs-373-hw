@@ -236,7 +236,7 @@ loud: `Blah` has only one rule, yet `Blah.py` exists as its own class with
 ### ANSWER — (d)
 
 ```
-Replace this line with your answer.
+All these classes defined rule name and fields, something that wasn't in my original guess. All the lists included the List label after the name of the attribute, unlike my version, the actual classes themselves take in _plcc.Node , which wasn't in my guess.
 ```
 
 
