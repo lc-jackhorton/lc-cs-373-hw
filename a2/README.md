@@ -311,7 +311,9 @@ line.
 ### ANSWER
 
 ```
-Replace this line with your answer.
+I think illegal 1 stops at the @ because of the ( right before the @ and outputs a error because it's expecting ) to follow (. It ended up expecting the AT token and it stopped at the ( before @ not @.
+
+I think illegal 2 won't work because (@ is expecting a right parenthesis to balance out the left parenthesis so it stops at @. I was right for this one.
 ```
 
 **(d)** Every successful tree in (a) contains only `Start`, `Pair`, and `Empty`
