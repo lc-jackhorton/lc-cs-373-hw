@@ -324,7 +324,7 @@ symbol, and how do you know?
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Because the parenthesis tokens weren't stored with <TOKEN> but instead TOKEN this means that the parenthesis tokens were thrown out once their existence was verified. 
 ```
 
 **(e)** `illegal-3` is `()` — no at-sign. The error it produces does **not**
@@ -335,7 +335,7 @@ what would the input have needed next for that to succeed?
 ### ANSWER
 
 ```
-Replace this line with your answer.
+I think illegal-3 was trying to build Start class but couldn't find the @. I think this because even though it doesn't mention the AT token, it shows that it created a Start class which should expect the AT token. This is my main theory. I could be wrong though, another theory I had was that it's looking for Balanced:after and for some reason failing instead of making it empty.
 ```
 
 
