@@ -1,0 +1,83 @@
+{
+  "is_ll1": true,
+  "start_symbol": "Lonn",
+  "first_sets": {
+    "Lonn": [
+      "LPAREN"
+    ],
+    "Nums": [
+      "",
+      "NUM"
+    ]
+  },
+  "follow_sets": {
+    "Lonn": [
+      "eof"
+    ],
+    "Nums": [
+      "RPAREN"
+    ]
+  },
+  "predict_sets": {
+    "Lonn": [
+      [
+        "LPAREN"
+      ]
+    ],
+    "Nums": [
+      [
+        "NUM"
+      ],
+      [
+        "RPAREN"
+      ]
+    ]
+  },
+  "parse_table": {
+    "Lonn": {
+      "LPAREN": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "NUM",
+            "field": "num"
+          },
+          {
+            "symbol": "Nums",
+            "field": "nums"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      }
+    },
+    "Nums": {
+      "NUM": {
+        "alt": "More",
+        "production": [
+          {
+            "symbol": "NUM",
+            "field": "num"
+          },
+          {
+            "symbol": "Nums",
+            "field": "nums"
+          }
+        ]
+      },
+      "RPAREN": {
+        "alt": "Done",
+        "production": []
+      }
+    }
+  },
+  "conflicts": [],
+  "left_recursion": [],
+  "arbno": {}
+}

@@ -1,0 +1,646 @@
+{
+  "lexical": {
+    "ruleList": [
+      {
+        "line": {
+          "string": "skip WHITESPACE '\\s+'\n",
+          "number": 4,
+          "file": "spec.plcc"
+        },
+        "name": "WHITESPACE",
+        "pattern": "\\s+",
+        "isSkip": true
+      },
+      {
+        "line": {
+          "string": "skip COMMENT '%.*'\n",
+          "number": 5,
+          "file": "spec.plcc"
+        },
+        "name": "COMMENT",
+        "pattern": "%.*",
+        "isSkip": true
+      },
+      {
+        "line": {
+          "string": "token LIT '\\d+'\n",
+          "number": 6,
+          "file": "spec.plcc"
+        },
+        "name": "LIT",
+        "pattern": "\\d+",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token LPAREN '\\('\n",
+          "number": 7,
+          "file": "spec.plcc"
+        },
+        "name": "LPAREN",
+        "pattern": "\\(",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token RPAREN '\\)'\n",
+          "number": 8,
+          "file": "spec.plcc"
+        },
+        "name": "RPAREN",
+        "pattern": "\\)",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token COMMA ','\n",
+          "number": 9,
+          "file": "spec.plcc"
+        },
+        "name": "COMMA",
+        "pattern": ",",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token ADDOP '\\+'\n",
+          "number": 10,
+          "file": "spec.plcc"
+        },
+        "name": "ADDOP",
+        "pattern": "\\+",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token SUBOP '\\-'\n",
+          "number": 11,
+          "file": "spec.plcc"
+        },
+        "name": "SUBOP",
+        "pattern": "\\-",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token ADD1OP 'add1'\n",
+          "number": 12,
+          "file": "spec.plcc"
+        },
+        "name": "ADD1OP",
+        "pattern": "add1",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token SUB1OP 'sub1'\n",
+          "number": 13,
+          "file": "spec.plcc"
+        },
+        "name": "SUB1OP",
+        "pattern": "sub1",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token SYMBOL '[A-Za-z]\\w*'\n",
+          "number": 14,
+          "file": "spec.plcc"
+        },
+        "name": "SYMBOL",
+        "pattern": "[A-Za-z]\\w*",
+        "isSkip": false
+      }
+    ]
+  },
+  "syntax": {
+    "rules": [
+      {
+        "line": {
+          "string": "<Program>        ::= <Exp>\n",
+          "number": 16,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Program",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:LitExp>     ::= <LIT>\n",
+          "number": 17,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "LitExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "LIT",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:VarExp>     ::= <SYMBOL>\n",
+          "number": 18,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "VarExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SYMBOL",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:PrimappExp> ::= <Prim> LPAREN <Rands> RPAREN\n",
+          "number": 19,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "PrimappExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Prim",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "LPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Rands",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "RPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Rands>          **= <Exp> +COMMA\n",
+          "number": 20,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Rands",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ],
+        "separator": {
+          "name": "COMMA",
+          "isTerminal": true,
+          "isCapturing": false
+        }
+      },
+      {
+        "line": {
+          "string": "<Prim:AddPrim>   ::= ADDOP\n",
+          "number": 21,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "AddPrim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "ADDOP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Prim:SubPrim>   ::= SUBOP\n",
+          "number": 22,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "SubPrim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SUBOP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Prim:Add1Prim>  ::= ADD1OP\n",
+          "number": 23,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "Add1Prim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "ADD1OP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Prim:Sub1Prim>  ::= SUB1OP\n",
+          "number": 24,
+          "file": "spec.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "Sub1Prim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SUB1OP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      }
+    ]
+  },
+  "semantics": {
+    "language": "Python",
+    "codeFragmentList": [
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Program\n",
+            "number": 28,
+            "file": "spec.plcc"
+          },
+          "className": "Program",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 29,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def _run(self):\n",
+              "number": 30,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return str(self.exp)\n",
+              "number": 31,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 32,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "PrimappExp\n",
+            "number": 34,
+            "file": "spec.plcc"
+          },
+          "className": "PrimappExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 35,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 36,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return f\"{self.prim}({self.rands})\"\n",
+              "number": 37,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 38,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Rands\n",
+            "number": 40,
+            "file": "spec.plcc"
+          },
+          "className": "Rands",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 41,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 42,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \",\".join(str(e) for e in self.expList)\n",
+              "number": 43,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 44,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "LitExp\n",
+            "number": 46,
+            "file": "spec.plcc"
+          },
+          "className": "LitExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 47,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 48,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return self.lit.lexeme\n",
+              "number": 49,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 50,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "VarExp\n",
+            "number": 52,
+            "file": "spec.plcc"
+          },
+          "className": "VarExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 53,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 54,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return self.symbol.lexeme\n",
+              "number": 55,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 56,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "AddPrim\n",
+            "number": 58,
+            "file": "spec.plcc"
+          },
+          "className": "AddPrim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 59,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 60,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"+\"\n",
+              "number": 61,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 62,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "SubPrim\n",
+            "number": 64,
+            "file": "spec.plcc"
+          },
+          "className": "SubPrim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 65,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 66,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"-\"\n",
+              "number": 67,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 68,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Add1Prim\n",
+            "number": 70,
+            "file": "spec.plcc"
+          },
+          "className": "Add1Prim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 71,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 72,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"add1\"\n",
+              "number": 73,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 74,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Sub1Prim\n",
+            "number": 76,
+            "file": "spec.plcc"
+          },
+          "className": "Sub1Prim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 77,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 78,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"sub1\"\n",
+              "number": 79,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 80,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

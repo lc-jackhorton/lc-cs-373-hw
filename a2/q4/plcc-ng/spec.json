@@ -1,0 +1,258 @@
+{
+  "lexical": {
+    "ruleList": [
+      {
+        "line": {
+          "string": "skip  WS     '\\s+'\n",
+          "number": 2,
+          "file": "broken-5.plcc"
+        },
+        "name": "WS",
+        "pattern": "\\s+",
+        "isSkip": true
+      },
+      {
+        "line": {
+          "string": "token LPAREN '\\('\n",
+          "number": 3,
+          "file": "broken-5.plcc"
+        },
+        "name": "LPAREN",
+        "pattern": "\\(",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token RPAREN '\\)'\n",
+          "number": 4,
+          "file": "broken-5.plcc"
+        },
+        "name": "RPAREN",
+        "pattern": "\\)",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token NUM    '\\d+'\n",
+          "number": 5,
+          "file": "broken-5.plcc"
+        },
+        "name": "NUM",
+        "pattern": "\\d+",
+        "isSkip": false
+      }
+    ]
+  },
+  "syntax": {
+    "rules": [
+      {
+        "line": {
+          "string": "<Lonn>       ::= LPAREN <NUM> <Nums> RPAREN\n",
+          "number": 7,
+          "file": "broken-5.plcc"
+        },
+        "lhs": {
+          "name": "Lonn",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "LPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "NUM",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          },
+          {
+            "name": "Nums",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "RPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Nums:More>  ::= <NUM> <Nums>\n",
+          "number": 8,
+          "file": "broken-5.plcc"
+        },
+        "lhs": {
+          "name": "Nums",
+          "isTerminal": false,
+          "altName": "More",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "NUM",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          },
+          {
+            "name": "Nums",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Nums:Done>  ::=\n",
+          "number": 9,
+          "file": "broken-5.plcc"
+        },
+        "lhs": {
+          "name": "Nums",
+          "isTerminal": false,
+          "altName": "Done",
+          "isCapturing": false
+        },
+        "rhsSymbolList": []
+      }
+    ]
+  },
+  "semantics": {
+    "language": "Python",
+    "codeFragmentList": [
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Lonn\n",
+            "number": 13,
+            "file": "broken-5.plcc"
+          },
+          "className": "Lonn",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 14,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "def _run(self):\n",
+              "number": 15,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "    first = int(self.num.lexeme)\n",
+              "number": 16,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "    return str(self.nums.min(first))\n",
+              "number": 17,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 18,
+              "file": "broken-5.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "More\n",
+            "number": 20,
+            "file": "broken-5.plcc"
+          },
+          "className": "More",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 21,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "def min(self, best):\n",
+              "number": 22,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "    n = int(self.num.lexeme)\n",
+              "number": 23,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "    if n < best:\n",
+              "number": 24,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "        best = n\n",
+              "number": 25,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "    return self.nums.min(best)\n",
+              "number": 26,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 27,
+              "file": "broken-5.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Done\n",
+            "number": 29,
+            "file": "broken-5.plcc"
+          },
+          "className": "Done",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 30,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "def min(self, best):\n",
+              "number": 31,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "    return best\n",
+              "number": 32,
+              "file": "broken-5.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 33,
+              "file": "broken-5.plcc"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

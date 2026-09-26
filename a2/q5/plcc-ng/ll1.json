@@ -1,0 +1,303 @@
+{
+  "is_ll1": true,
+  "start_symbol": "Program",
+  "first_sets": {
+    "Exp": [
+      "ADD1OP",
+      "ADDOP",
+      "LIT",
+      "SUB1OP",
+      "SUBOP",
+      "SYMBOL"
+    ],
+    "Prim": [
+      "ADD1OP",
+      "ADDOP",
+      "SUB1OP",
+      "SUBOP"
+    ],
+    "Program": [
+      "ADD1OP",
+      "ADDOP",
+      "LIT",
+      "SUB1OP",
+      "SUBOP",
+      "SYMBOL"
+    ]
+  },
+  "follow_sets": {
+    "Exp": [
+      "COMMA",
+      "RPAREN",
+      "eof"
+    ],
+    "Prim": [
+      "LPAREN"
+    ],
+    "Program": [
+      "eof"
+    ]
+  },
+  "predict_sets": {
+    "Exp": [
+      [
+        "LIT"
+      ],
+      [
+        "SYMBOL"
+      ],
+      [
+        "ADD1OP",
+        "ADDOP",
+        "SUB1OP",
+        "SUBOP"
+      ]
+    ],
+    "Prim": [
+      [
+        "ADDOP"
+      ],
+      [
+        "SUBOP"
+      ],
+      [
+        "ADD1OP"
+      ],
+      [
+        "SUB1OP"
+      ]
+    ],
+    "Program": [
+      [
+        "ADD1OP",
+        "ADDOP",
+        "LIT",
+        "SUB1OP",
+        "SUBOP",
+        "SYMBOL"
+      ]
+    ]
+  },
+  "parse_table": {
+    "Program": {
+      "SYMBOL": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "SUBOP": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "SUB1OP": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "ADDOP": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "ADD1OP": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "LIT": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      }
+    },
+    "Exp": {
+      "LIT": {
+        "alt": "LitExp",
+        "production": [
+          {
+            "symbol": "LIT",
+            "field": "lit"
+          }
+        ]
+      },
+      "SYMBOL": {
+        "alt": "VarExp",
+        "production": [
+          {
+            "symbol": "SYMBOL",
+            "field": "symbol"
+          }
+        ]
+      },
+      "ADDOP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "SUB1OP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "ADD1OP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "SUBOP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      }
+    },
+    "Prim": {
+      "ADDOP": {
+        "alt": "AddPrim",
+        "production": [
+          {
+            "symbol": "ADDOP",
+            "field": null
+          }
+        ]
+      },
+      "SUBOP": {
+        "alt": "SubPrim",
+        "production": [
+          {
+            "symbol": "SUBOP",
+            "field": null
+          }
+        ]
+      },
+      "ADD1OP": {
+        "alt": "Add1Prim",
+        "production": [
+          {
+            "symbol": "ADD1OP",
+            "field": null
+          }
+        ]
+      },
+      "SUB1OP": {
+        "alt": "Sub1Prim",
+        "production": [
+          {
+            "symbol": "SUB1OP",
+            "field": null
+          }
+        ]
+      }
+    }
+  },
+  "conflicts": [],
+  "left_recursion": [],
+  "arbno": {
+    "Rands": {
+      "rhs": [
+        {
+          "field": "expList",
+          "symbol": "Exp",
+          "is_terminal": false
+        }
+      ],
+      "separator": "COMMA",
+      "lookahead": [
+        "ADD1OP",
+        "ADDOP",
+        "LIT",
+        "SUB1OP",
+        "SUBOP",
+        "SYMBOL"
+      ]
+    }
+  }
+}

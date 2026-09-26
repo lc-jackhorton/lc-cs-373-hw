@@ -1,0 +1,169 @@
+{
+  "start": "Program",
+  "classes": [
+    {
+      "name": "Program",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "exp",
+          "type": "Exp",
+          "is_list": false
+        }
+      ],
+      "rule_name": "Program"
+    },
+    {
+      "name": "Exp",
+      "abstract": true,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Exp"
+    },
+    {
+      "name": "LitExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "lit",
+          "type": "Token",
+          "is_list": false
+        }
+      ],
+      "rule_name": "LitExp"
+    },
+    {
+      "name": "VarExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "Token",
+          "is_list": false
+        }
+      ],
+      "rule_name": "VarExp"
+    },
+    {
+      "name": "PrimappExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "prim",
+          "type": "Prim",
+          "is_list": false
+        },
+        {
+          "name": "rands",
+          "type": "Rands",
+          "is_list": false
+        }
+      ],
+      "rule_name": "PrimappExp"
+    },
+    {
+      "name": "Rands",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "expList",
+          "type": "Exp",
+          "is_list": true
+        }
+      ],
+      "rule_name": "Rands"
+    },
+    {
+      "name": "Prim",
+      "abstract": true,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Prim"
+    },
+    {
+      "name": "AddPrim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "AddPrim"
+    },
+    {
+      "name": "SubPrim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "SubPrim"
+    },
+    {
+      "name": "Add1Prim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "Add1Prim"
+    },
+    {
+      "name": "Sub1Prim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "Sub1Prim"
+    }
+  ],
+  "semantic_sections": [
+    {
+      "language": "python",
+      "fragments": [
+        {
+          "class_name": "Program",
+          "kind": "body",
+          "body": "def _run(self):\n    return str(self.exp)"
+        },
+        {
+          "class_name": "PrimappExp",
+          "kind": "body",
+          "body": "def __str__(self):\n    return f\"{self.prim}({self.rands})\""
+        },
+        {
+          "class_name": "Rands",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \",\".join(str(e) for e in self.expList)"
+        },
+        {
+          "class_name": "LitExp",
+          "kind": "body",
+          "body": "def __str__(self):\n    return self.lit.lexeme"
+        },
+        {
+          "class_name": "VarExp",
+          "kind": "body",
+          "body": "def __str__(self):\n    return self.symbol.lexeme"
+        },
+        {
+          "class_name": "AddPrim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"+\""
+        },
+        {
+          "class_name": "SubPrim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"-\""
+        },
+        {
+          "class_name": "Add1Prim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"add1\""
+        },
+        {
+          "class_name": "Sub1Prim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"sub1\""
+        }
+      ]
+    }
+  ]
+}
