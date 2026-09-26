@@ -268,7 +268,19 @@ parse fails, so read to the **last line** of the output before deciding.
 ### ANSWER
 
 ```
-Replace this line with your answer.
+FALSE | Legal 1: I predict it will parse as nothing. \n
+This is false, it ended up parsing as Start Empty(empty).\n\n
+
+TRUE | Legal 2: I predict that it starts by reading (()) and the outside parathesis form a Balanced:Pair class, then it \n looks for balanced inside, which forms another nested pair class using the nested (). The nested () have no insides and don't have \n a after. So it moves on to ()@ where that gets added as a Balanced:after, this gets added to the pair as a \n nested pair but there's no after or inside for ()@. Then because of the @ the Balanced:Pair gets nested in Start class.\n\n
+
+FALSE | Illegal 1: This I think will ignore the ) and just do ()@ so it parses as a Balanced:Pair which is empty then is nested in Start. \n
+This is false, it ended up doing the pair, then getting confused by the ) before the @ so it didn't nest this in Start. \n\n
+
+TRUE | Illegal 2: This doesn't work because (@ is expecting a right parenthesis to balance out the left parenthesis.
+\n\n
+
+FALSE | Illegal 3: I feel like () should work but it will only be the Balanced Pair class which is empty. \n
+It ended up doing something I found strange. I think what happened was Balanced Pair is required to be in the Start class so \n it tried to do that but there's no AT token so it failed.
 ```
 
 **(b)** `legal-2` is `(())()@`. Draw the parse tree by hand, in the same
