@@ -517,13 +517,25 @@ The solution is to replace self.number.lexeme with self.num.lexeme
 ### ANSWER — broken-4
 
 ```
-Replace this line with your answer.
+Failed at semantics phase
+Specification error: AttributeError: 'Done' object has no attribute 'min'
+Fix the errors in your specification and re-run.
+
+The function for Done is defined as def done, so when the recursive function in _run gets to <Nums:Done> it can't actually run the min function for that last step.
+
+The solution is to replace def done with def min
 ```
 
 ### ANSWER — broken-5
 
 ```
-Replace this line with your answer.
+Failed at parsing phase
+plcc-make: error: grammar is not LL(1)
+LL(1) conflict: <Nums> on lookahead NUM
+
+The error occurs because Nums:More and Nums:Last both are looking for <NUM>. Now Nums is also looking for <Nums> but the program would have to evaluate Nums to know whether Nums:More or Nums:Last should be used. This means the program can't simply read from left to right. It has to read left to right, then figure out whether Nums:More or Nums:Last makes sense in context then read left to right again.
+
+My solution is to just ditch Nums:Last and the LAST in semantics section.
 ```
 
 
