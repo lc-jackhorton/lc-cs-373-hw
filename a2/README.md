@@ -567,7 +567,23 @@ echo '+(4, -(5, 2))' | plcc-parse -s spec.plcc
 ### ANSWER
 
 ```
-Replace this line with your answer.
+x is valid for V0, x is a SYMBOL
+<Exp:VarExp>     ::= <SYMBOL> is what ends up being used
+Result is this held true.
+
++(4, -(5, 2)) is valid for V0 , it has a primitive + or - for the () PrimappExp, only makes two arguments in each () PrimappExp, and have integers or another PrimappExp within its arguments
+Result is this was true
+<Exp:PrimappExp> ::= <Prim> LPAREN <Rands> RPAREN got used for each () expression, where rands takes another expression, the expression rands takes in for this is either Exp:PrimappExp or Exp:LitExp since the numbers are considered <LIT> literals.
+
+
+sub1(x, 3) is valid for V0, since <Prim:Sub1Prim> is the primitive used in <Exp:PrimappExp>, there's the enclosed parenthesis and <Rands> inside of it. Now <Rands> in this case is using <Exp:VarExp> for the x and <Exp:LitExp> for the 3.
+Result is this held true.
+
++(1 2) won't work for V0. <Exp:PrimappExp> is called for (), + is used for the primitive. Rands is used for this. Rands however expects a comma between the numers.
+This is the exactl error I got plcc-parser-table: -:1:5: error: expected 'RPAREN', got 'LIT'
+
+3 + 4 , will not work in V0, it will use <Exp:LitExp> for 3, then sees the + primitive, and starts up <Exp:PrimappExp>, but there's no parenthesis so it's going to error.
+plcc-parser-table: -:1:5: error: expected 'LPAREN', got 'LIT'
 ```
 
 **(b)** `V0` spends four token lines and five grammar rules on its operators.
