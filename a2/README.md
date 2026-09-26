@@ -681,7 +681,17 @@ in each case? (You do not have to make the change; say what it would take.)
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Semantics would have to change since PRIM is being used no matter what in Exp:PrimappExp and changing Exp:PrimappExp would create a ripple effect.
+
+Therefore semantics is a cleaner change. You'd want to edit
+Sub1Prim
+%%%
+def __str__(self):
+    return "sub1"
+%%%
+To include a limit on the expression length to 1.
+
+If you specified a error message for if it isn't one then it would be that error message. Else this would yield the error of being unable to evaluate the string of Sub1Prim
 ```
 
 **(e)** Run `3 + 4` through `plcc-rep` this time. It prints `3` on one line
@@ -692,12 +702,13 @@ from (a) shows the same thing as two trees; explain how they line up.)
 ### ANSWER
 
 ```
-Replace this line with your answer.
+3 is a literal of a expression, so 3 can print fine
++ indicates the start of PrimappExp since + is a primitive, which means it's looking for left parenthesis, but there are none which is why it errors.
 ```
 
 ## Before you zip and upload your work
 
-- [ ] Every `ANSWER` block has an answer in it. An unanswered block reads as
+- [X] Every `ANSWER` block has an answer in it. An unanswered block reads as
       skipped work under **Completeness**.
 - [ ] `q3/sum.plcc` — with your `More.sum` written, and the diff clean.
 
