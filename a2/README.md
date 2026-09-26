@@ -710,7 +710,7 @@ from (a) shows the same thing as two trees; explain how they line up.)
 
 - [X] Every `ANSWER` block has an answer in it. An unanswered block reads as
       skipped work under **Completeness**.
-- [ ] `q3/sum.plcc` — with your `More.sum` written, and the diff clean.
+- [X] `q3/sum.plcc` — with your `More.sum` written, and the diff clean.
 
 `plcc-ng/` directories are build caches. Leaving them in place costs you
 nothing.
