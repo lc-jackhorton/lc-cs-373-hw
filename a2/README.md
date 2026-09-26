@@ -291,7 +291,16 @@ telling them apart is the point. Then run it and compare.
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Start
+  Balanced:Pair
+    Balanced:inside
+      Balanced:inside | Empty (empty)
+      Balanced:after| Empty (empty)
+    Balanced:after
+      Balanced:inside | Empty (empty)
+      Balanced:after | Empty (empty)
+
+   My results seem to line up with my parse tree theory.
 ```
 
 **(c)** `illegal-1` is `())@` and `illegal-2` is `(@`. For each, before
