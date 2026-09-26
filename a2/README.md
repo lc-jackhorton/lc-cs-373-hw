@@ -476,19 +476,42 @@ added to `min.plcc`, and the smallest fix takes it back out.
 ### ANSWER — broken-1
 
 ```
-Replace this line with your answer.
+Failed at scanning phase
+input.txt:1:3: error: unrecognized character ' '
+input.txt:1:5: error: unrecognized character ' '
+input.txt:1:7: error: unrecognized character ' '
+input.txt:1:10: error: unrecognized character '\n'
+
+Then when parsing happens
+plcc-tokens: -:1:3: error: unrecognized character ' '
+
+Reason for failure is it didn't skip white spaces, views them as unrecognized characters. During the parsing phase it sees a bunch of white space tokens in the way of parenthesis and numbers so it fails. 
+
+Fix is this line skip  WS     '\s+'
 ```
 
 ### ANSWER — broken-2
 
 ```
-Replace this line with your answer.
+Failed at parsing phase
+plcc-validate-syntactic: broken-2.plcc:8:1: error: duplicate RHS symbol name 'num' — all capturing RHS symbols must have unique names
+<Nums:More>  ::= <NUM> <NUM> <Nums>
+
+Reason for failure is that the syntax has <Nums:More>  ::= <NUM> <NUM> <Nums> , and in the system it wants to be able to differentiate between Nums:More <NUM> and Nums:More <NUM> so it's looking for a label like <NUM:one> and <NUM:two> to differentiate.
+
+The fix is to remove one of the <NUM> tags because this doesn't need two <NUM> tags to run.
 ```
 
 ### ANSWER — broken-3
 
 ```
-Replace this line with your answer.
+Failed at semantics phase
+Specification error: AttributeError: 'More' object has no attribute 'number'
+Fix the errors in your specification and re-run.
+
+Reason for failure, n = int(self.number.lexeme) calls number attribute on More. But number isn't a tag for <Nums:More> so it was never assigned a attribute in More.
+
+The solution is to replace self.number.lexeme with self.num.lexeme 
 ```
 
 ### ANSWER — broken-4
