@@ -628,7 +628,31 @@ Then answer these four, in order:
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Program
+   PrimappExp
+   PRIMOP
+   Rands
+      LitExp
+      PrimappExp
+         PRIMOP
+         Rands
+            LitExp
+            LitExp
+
+AddPrim (empty)
+In the new code results in Specification error: AttributeError: 'PrimappExp' object has no attribute 'prim'
+In the old code results in no error
+
+self.prim no longer works because there's no more PRIM, I changed the semantics code to self.primop see below
+PrimappExp
+%%%
+def __str__(self):
+    return f"{self.primop}({self.rands})"
+%%%
+
+
+In the spec.plcc version the type of operation is stored in the primitive subclass
+In the oneprim.plcc <PRIMOP> tag tells the program to keep track of what each primitive operation is. 
 ```
 
 **(c)** The semantic section defines `_run` once and `__str__` eight times,
