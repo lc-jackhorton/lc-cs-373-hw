@@ -175,19 +175,32 @@ that class too.
 ### ANSWER — (a)
 
 ```
-Replace this line with your answer.
-```
+class Blah:
+    pass
 
+class Goo(Blah):    # class dervied from Blah
+   def __init__(self, blah):
+      self.var = var      # token
+      self.silly = silly  # silly object
+```
 ### ANSWER — (b)
 
 ```
-Replace this line with your answer.
+class Many:
+   def __init__(self, rule, of, stuff):
+      self.rule = rule    # list of rules
+      self.stuff = stuff  # list of stuff 
+      self.of = of        # list of the of token
 ```
 
 ### ANSWER — (c)
 
 ```
-Replace this line with your answer.
+class Classes:
+    def __init__(self, c1, c2, c3):
+      self.c1 = c1    # token
+      self.c2 = c2    # token
+      self.c3 = c3    # token
 ```
 
 Now check yourself. Run the specification once so PLCC generates its classes,
