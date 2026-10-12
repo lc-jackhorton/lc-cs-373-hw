@@ -218,7 +218,7 @@ right-hand side sees, and say in a sentence what it does.
 q1d.jpg
 
 valList = [e.eval(env) for e in self.expList]
-e.eval(env) evaluates the expression list in the current enviroment. And enviroments are established by the let function.
+e.eval(env) evaluates the expression list in the current environment. The environments are established by the let function.
 ```
 
 ## QUESTION 2 — Add a primitive
@@ -237,7 +237,8 @@ the `(`? Which phase produced each line?
 ### ANSWER — (a)
 
 ```
-Replace this line with your answer.
+neg has no binding because it's not a primitive expression so the code wants to read it like a variable but it's not already defined.
+Since neg() isn't a PrimappExp then the program doesn't know how to read the parenthesis. 
 ```
 
 **(b)** Add a `neg` primitive that takes one argument and returns its arithmetic
@@ -256,7 +257,7 @@ and why does its position matter?**
 ### ANSWER — (b)
 
 ```
-Replace this line with your answer.
+The token should go above SYMBOL because SYMBOL claims all letters and so since SYMBOL and NEGOP both claim the three letters neg whichever is on top will be what the program determines what token neg should be. 
 ```
 
 **(c)** Change the `LIT` token so a literal can begin with an optional minus
@@ -273,7 +274,7 @@ it. Say which token each one becomes, and why the scanner can tell them apart.
 ### ANSWER — (c)
 
 ```
-Replace this line with your answer.
+4 is a LIT token, -1 is a LIT token. The comma isn't considered part of a LIT token thus allowing the program to tell them apart. The -() is a minus operation that is performed on the two literals. The result is 5.
 ```
 
 Paste your `NegPrim` section and your changed lines from `grammar.plcc` here, as
@@ -282,7 +283,23 @@ well as leaving them in the files.
 ### ANSWER — (code)
 
 ```
-Replace this line with your answer.
+token LIT '-?\d+'
+token NEGOP 'neg'
+<Prim:NegPrim>   ::= NEGOP
+
+
+
+NegPrim
+%%%
+def __str__(self):
+    return "neg"
+
+def apply(self, args):
+    if len(args) != 1:
+        raise LanguageError("one argument expected")
+    i0 = args[0].intVal().val
+    return IntVal(-1*i0)
+%%%
 ```
 
 ## QUESTION 3 — Scope
