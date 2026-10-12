@@ -159,7 +159,7 @@ in
 ### ANSWER — (a)
 
 ```
-Replace this line with your answer.
+q1a.jpg
 ```
 
 **(b)**
@@ -180,7 +180,7 @@ in
 ### ANSWER — (b)
 
 ```
-Replace this line with your answer.
+q1b.jpg
 ```
 
 **(c)** (a) and (b) print the same value, but they build different chains. In
@@ -191,7 +191,7 @@ your drawings for (a) and (b). No new drawing is needed.
 ### ANSWER — (c)
 
 ```
-Replace this line with your answer.
+The (a) program will error since there's no binding for y because the definition of y relies on x and the environment for x does not exist until the let statement is fully interpreted. The (b) program will yield 15 since the environments are defined one at a time.
 ```
 
 **(d)**
