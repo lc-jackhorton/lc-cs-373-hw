@@ -216,6 +216,9 @@ right-hand side sees, and say in a sentence what it does.
 
 ```
 q1d.jpg
+
+valList = [e.eval(env) for e in self.expList]
+e.eval(env) evaluates the expression list in the current enviroment. And enviroments are established by the let function.
 ```
 
 ## QUESTION 2 — Add a primitive
