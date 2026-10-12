@@ -215,7 +215,7 @@ right-hand side sees, and say in a sentence what it does.
 ### ANSWER — (d)
 
 ```
-Replace this line with your answer.
+q1d.jpg
 ```
 
 ## QUESTION 2 — Add a primitive
