@@ -3,7 +3,7 @@
 #   using an initial set of bindings to certain Roman numerals
 skip WHITESPACE '\s+'
 skip COMMENT '%.*'
-token LIT '\d+'
+token LIT '-?\d+'
 token LPAREN '\('
 token RPAREN '\)'
 token COMMA ','
@@ -11,6 +11,7 @@ token ADDOP '\+'
 token SUBOP '\-'
 token MULOP '\*'
 token DIVOP '/'
+token NEGOP 'neg'
 token ADD1OP 'add1'
 token SUB1OP 'sub1'
 token ZEROP 'zero\?'
@@ -28,3 +29,4 @@ token SYMBOL '[A-Za-z]\w*'
 <Prim:Add1Prim>  ::= ADD1OP
 <Prim:Sub1Prim>  ::= SUB1OP
 <Prim:ZeropPrim> ::= ZEROP
+<Prim:NegPrim>   ::= NEGOP
