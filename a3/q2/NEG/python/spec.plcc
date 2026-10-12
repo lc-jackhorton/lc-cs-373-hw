@@ -224,3 +224,21 @@ def apply(self, args):
     i0 = args[0].intVal().val
     return IntVal(1 if i0 == 0 else 0)
 %%%
+
+NegPrim:import
+%%%
+from IntVal import IntVal
+from runtime.base import LanguageError
+%%%
+
+NegPrim
+%%%
+def __str__(self):
+    return "neg"
+
+def apply(self, args):
+    if len(args) != 1:
+        raise LanguageError("one argument expected")
+    i0 = args[0].intVal().val
+    return IntVal(-1*i0)
+%%%
