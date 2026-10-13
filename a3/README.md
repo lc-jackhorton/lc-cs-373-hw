@@ -441,7 +441,9 @@ Hint for the second one: work from the inside out.
 ### ANSWER — (c)
 
 ```
-Replace this line with your answer.
+.proc(x,y,z) +(x,+(y,z)) (3,5,8)
+
+.proc(x) .proc(y) +(x,+(y,2)) (5) (3)
 ```
 
 **(d)** This program looks like it should compute 4 factorial:
@@ -469,7 +471,12 @@ in
 ### ANSWER — (d)
 
 ```
-Replace this line with your answer.
+V4 does not support recursion so fact can't use itself in the definition
+
+let
+  sumto = proc(f,n) if zero?(n) then 0 else +(n, .f(f,sub1(n)))   
+in
+  .sumto(sumto, 4)
 ```
 
 **(e)** Sequences. Predict, then run:
@@ -487,14 +494,20 @@ those earlier expressions could matter?
 ### ANSWER — (e)
 
 ```
-Replace this line with your answer.
+Whichever is the last expression in the sequence is going to be the result normally
+So for the first one it's 3, for the third one it's x outside of the let x = 2 thus it ends up being the x = 1.
+
+For the second sequence it fails because you can't divide by 0.
+
+The current v replaces the previous v, which is why this works the way it does
+v = e.eval(env)
 ```
 
 ## Before you zip and upload your work
 
-- [ ] Every `ANSWER` block has an answer in it. An unanswered block reads as
+- [X] Every `ANSWER` block has an answer in it. An unanswered block reads as
       skipped work under **Completeness**.
-- [ ] `q2/NEG/`: `neg` works, negative literals work, and your changes are
+- [X] `q2/NEG/`: `neg` works, negative literals work, and your changes are
       pasted into Question 2.
 - [ ] Your drawings, `q1a`, `q1b`, `q1d`, `q4a`, and `q4b`, are in the `a3`
       directory, and each answer block names its file.
