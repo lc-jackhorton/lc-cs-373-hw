@@ -336,10 +336,8 @@ For (e), name the method that raises the message.
 ```
 Diagrams
 q3a.jpg
-q3b.jpg
-q3c.jpg
-q3d.jpg
-q3e.jpg
+q3bc.jpg
+q3de.jpg
 
 In q3a the y in the new environment relies on the definition of the x in the old environment. The result is 9.
 In q3b the y in the add1(y) statement doesn't exist yet until the let statement evaluates.
@@ -509,7 +507,7 @@ v = e.eval(env)
       skipped work under **Completeness**.
 - [X] `q2/NEG/`: `neg` works, negative literals work, and your changes are
       pasted into Question 2.
-- [ ] Your drawings, `q1a`, `q1b`, `q1d`, `q4a`, and `q4b`, are in the `a3`
+- [X] Your drawings, `q1a`, `q1b`, `q1d`, `q4a`, and `q4b`, are in the `a3`
       directory, and each answer block names its file.
 
 `plcc-ng/` directories are build caches. Leaving them in place costs you
