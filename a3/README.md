@@ -334,7 +334,21 @@ For (e), name the method that raises the message.
 ### ANSWER
 
 ```
-Replace this line with your answer.
+Diagrams
+q3a.jpg
+q3b.jpg
+q3c.jpg
+q3d.jpg
+q3e.jpg
+
+In q3a the y in the new environment relies on the definition of the x in the old environment. The result is 9.
+In q3b the y in the add1(y) statement doesn't exist yet until the let statement evaluates.
+In q3c the y in the let a = 50 is the a being used in +(a,b) due to each let making a separate environment. The b term is based on the first defined a, that a existing in an environment that the b environment is being made from.
+In q3d the y cannot be used for x = y since the let has yet to create a environment with a definition for y.
+In q3e the x cannot be assigned in the same environment two separate values.
+
+q3e error message
+duplicate ID x in let LHS identifiers
 ```
 
 ## QUESTION 4 — Functions
