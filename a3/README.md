@@ -376,7 +376,8 @@ application **extends**.
 ### ANSWER — (a)
 
 ```
-The application extends to the environment that's stacked on top of the nullEnv. That being the environment n = 10 is stored in.
+The application extends to the environment that's stacked on top of the nullEnv.
+That being the environment n = 10 is stored in.
 ```
 
 **(b)** Now add one more `let` between the definition and the application:
@@ -403,7 +404,11 @@ sees, and say what one change to that line would make the program print the
 ### ANSWER — (b)
 
 ```
-Replace this line with your answer.
+nenv = self.env.extendEnv(bindings)
+is the line of code that decides the second n should be used. self is the function proc object and that object has a saved environment which relies on n = 10.
+
+Removing self from self.env results in this executing at the environment fed into apply which will end up being n = 100 since that environment is created before the proc is evaluated.
+nenv = env.extendEnv(bindings)
 ```
 
 **(c)** A `let` is an applied `proc` in disguise. The textbook gives the rule:
