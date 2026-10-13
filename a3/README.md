@@ -376,7 +376,7 @@ application **extends**.
 ### ANSWER — (a)
 
 ```
-Replace this line with your answer.
+The application extends to the environment that's stacked on top of the nullEnv. That being the environment n = 10 is stored in.
 ```
 
 **(b)** Now add one more `let` between the definition and the application:
