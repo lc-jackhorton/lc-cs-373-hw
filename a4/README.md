@@ -341,11 +341,11 @@ q2a.jpg
 Predicted result : 11
 Actual Result : 11
 
-x is assigned reference 1   in an environment
-y is assigned reference x in the environment thus y = 1
+x is assigned  1   in an environment
+y is assigned  x in the environment thus y = 1 due to assign by value
 f is a procedural which outputs nenv x
-nenv x is mutated by set locally to 10
-+(y, .f()) evaluates .f() to produce local x of 10 and add that to y which is 1
+nenv x is mutated by set to make x now 10 so
++(y, .f()) evaluates .f() to produce x of 10 and add that to y which is 1
 10 + 1 = 11
 ```
 ````
