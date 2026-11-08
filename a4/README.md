@@ -219,9 +219,37 @@ by then.
 
 ### ANSWER — (b)
 
+````
 ```
-Replace this line with your answer.
+Run in V5
+
+(1)  letrec x = 3  y = x  in y
+
+Prediction : 3
+Result : 3
+letrec reads left to right. letrec creates an environment and sets x within the environment to be a reference leading to 3, x binding is added to environment, then it sets the y in that environment to lead to the x reference which leads to 3, y now has a binding in the enviroment, then it evaluates y which calls the x reference thus returning 3 as the value.
+
+(2)  letrec y = x  x = 3  in y
+
+Prediction : No reference for x
+Result : No binding for x
+letrec reads left to right so it initializes an environment and tries to set y to lead to the x reference however, x has no binding reference yet.
+
+(3)  letrec a = proc() b  b = 7  in .a()
+
+Prediction : 7
+Result : 7
+letrec reads left to right. First it initializes an environment, then it sets a to equal a procedural expression that takes no input and returns b as an output. a now has a binding in the enviroment to the procedural expression. This is okay as b doesn't need to be defined until the function is evaluated. b reference is set to lead to 7 so b now has a binding in the environment. Once .a() is evaluated it returns b thus resulting in 7.
+
+
+(4)  letrec a = proc() b  c = .a()  b = 7  in c
+
+
+Prediction : No binding for b
+Result : No binding for b
+letrec reads left to right. First it initializes an environment, then it sets a to equal a procedural expression that takes no input and returns b as an output. a now has a binding in the environment to b. c reference is set to the function, thus forcing the function to be evaluated before b reference has been defined. Since the function is supposed to return b, it can't return anything so this will result in an error.
 ```
+````
 
 **(c)** Use `V6` (`.../languages-ng/src/V6/python`). Enter these in **one**
 `plcc-rep`, in this order:
@@ -240,9 +268,47 @@ each `ProcVal` saved**. No drawing is required.
 
 ### ANSWER — (c)
 
+````
 ```
-Replace this line with your answer.
+Run in V6
+
+Prediction
+.f() prints 2
+.g() prints 1
+
+Result
+n
+f
+g
+n
+2
+1
+
+Reasoning
+define n = 1
+define f = proc() n
+define g = let n = n in proc() n
+define n = 2
+.f()
+.g()
+
+f is defined as n, this relies on the global definition of n. When .f() is called, this global definition is 2.
+This is defined as a node which is type ProcExp
+
+ProcExp
+def eval(self, env):
+    return self.proc.makeClosure(env)
+Where the procedural is enclosed within the environment (in this case the global environment) 
+
+
+When g is defined, the let expression creates an environment, inside that environment a local n is created using the global n which is currently defined as n = 1. When g is called it will rely on local n and evaluate as 1.
+This is evaluated with
+def eval(self, env):
+    nenv = self.letDecls.addBindings(env)
+    return self.exp.eval(nenv)
+Where the self.exp is evaluated using the new environment, the self.exp node is a proc expression node that relies on the nenv
 ```
+````
 
 
 ## QUESTION 2 — Refs and side effects
