@@ -178,8 +178,29 @@ and say why that lets `sumto`'s body find `sumto`.
 
 ### ANSWER — (a)
 
+````
 ```
-Replace this line with your answer.
+Run using V5
+
+q1a.jpg
+
+Prediction
+10
+
+Result
+10
+
+LetrecExp is the node which calls addLetrecBindings
+LetExp is the node which calls addBindings
+
+Line which determines which environment letrec bindings are put in "    env = env.extendEnv(Bindings())"
+env = env.extendEnv means that inside a new environment is the previous environment and its bindings
+Letrec creates environment then adds bindings to that environment
+Let prepares the bindings then places those bindings in a created environment
+```
+````
+
+
 ```
 
 **(b)** Use `V5`. Predict each, then run each:
