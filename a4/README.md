@@ -467,7 +467,7 @@ y = reference to 5
 
 When swap is evaluated it takes the x and y then does a = x reference, b = y reference inside the procedural. It creates an environment, in that environment t is set to the reference of a. Then a is set to the reference of b (which is y), then b is set to the reference of t (which is ref a which is x).  After the swap, the modified x and y are used in -(x,y) resulting in -2.
 
-The reason this swapping doesn't work in REF is because REF isn't changing what x and y fundamentally are referencing, just the things that reference to x and y.
+The reason this swapping doesn't work in REF is because REF isn't changing what x and y fundamentally are, just the things that reference to x and y.
 ```
 ````
 
