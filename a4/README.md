@@ -335,9 +335,22 @@ does `y` not see the `set`, when `.f()` does?
 
 ### ANSWER — (a)
 
+````
 ```
-Replace this line with your answer.
+Run in SET
+q2a.jpg
+
+Predicted result : 11
+Actual Result : 11
+
+x is assigned reference 1   in an environment
+y is assigned reference x in the environment thus y = 1
+f is a procedural which outputs nenv x
+nenv x is mutated by set locally to 10
++(y, .f()) evaluates .f() to produce local x of 10 and add that to y which is 1
+10 + 1 = 11
 ```
+````
 
 **(b)**
 
@@ -361,9 +374,29 @@ call's change? Answer from your drawing.
 
 ### ANSWER — (b)
 
+````
 ```
-Replace this line with your answer.
+Run in SET
+q2b.jpg
+
+let
+  count = 0
+in
+  let
+    inc = proc() set count = add1(count)
+  in
+    { .inc() ; .inc() ; count }
+
+
+Creates an environment where count is 0
+A nenv is created captured by the existing enviroment where inc is a procedural that when evaluated takes count from the environment, adds 1 to count thus mutating count from the environment
+
+In the sequence
+When .inc is evaluated it mutates count to 1
+When .inc is evaluated against it mutates the count to 2
+The count is the last thing listed in the sequence so the count is outputted as 2
 ```
+````
 
 **(c)** Run `set z = 1` on its own. Read `SetExp.eval` in
 `.../languages-ng/src/SET/python/spec.plcc`. Quote the line of `SetExp.eval` whose
@@ -371,9 +404,21 @@ call fails, and say why `set` can never make a new variable.
 
 ### ANSWER — (c)
 
+````
 ```
-Replace this line with your answer.
+Run in SET
+
+   def eval(self, env):
+        v = self.exp.eval(env)
+        ref = env.applyEnvRef(self.symbol.lexeme)
+        return ref.setRef(v)
+
+
+set z = 1   is an expression that can be evaluated in global environment so "v = self.exp.eval(env)" is fine
+The line that fails is    "ref = env.applyEnvRef(self.symbol.lexeme)" since there's no reference for z
+set can't make a new variable because set can only apply references, it cannot create new references
 ```
+````
 
 
 ## QUESTION 3 — Call by value, call by reference
@@ -399,9 +444,34 @@ and `b` get in each language?
 
 ### ANSWER — (a)
 
+````
 ```
-Replace this line with your answer.
+SET & REF
+q3a.jpg
+
+let
+  x = 3
+  y = 5
+  swap = proc(a, b) let t = a in { set a = b ; set b = t }
+in
+  { .swap(x, y) ; -(x, y) }
+
+
+For SET it's pass by value
+x = 3
+y = 5
+
+When swap is evaluated it takes x = 3 and y = 5 then does a = 3, b = 5 inside the procedural. It creates an environment, in that environment 3 is stored in t, then 5 is stored in a, then 3 is stored in b. The result is a = 5 b = 3. After swap, the modified x and y are used in -(x,y) resulting in 2.
+
+For REF it's pass by reference
+x = reference to 3
+y = reference to 5
+
+When swap is evaluated it takes the x and y then does a = x reference, b = y reference inside the procedural. It creates an environment, in that environment t is set to the reference of a. Then a is set to the reference of b (which is y), then b is set to the reference of t (which is ref a which is x).  After the swap, the modified x and y are used in -(x,y) resulting in -2.
+
+The reason this swapping doesn't work in REF is because REF isn't changing what x and y fundamentally are referencing, just the things that reference to x and y.
 ```
+````
 
 **(b)** Change the call to `.swap(add1(x), y)` and change nothing else.
 Predict and run in both languages. Explain the `REF` output: what did `a` and
@@ -409,9 +479,18 @@ Predict and run in both languages. Explain the `REF` output: what did `a` and
 
 ### ANSWER — (b)
 
+````
 ```
-Replace this line with your answer.
+SET & REF
+
+SET results in -2
+REF results in -1
+
+SET takes a = add1(x) and evaluates that as 4. Then takes t = 4. Then takes a = b = 5. Then takes b = t = 4. So b = 4 and a = 5. Then because the x and y weren't changed we take x-y=-2 since 3-5=-2.
+
+REF takes a = add1(x), add1(x) is assigned to t, b is assigned to a so a is now 5. t is assigned to b so b is now add1(x). Since a = 5 that means global x is now 5, since b = global y then global y is now add1(x) which is 4. Then -(x,y) takes 4-5=-1  
 ```
+````
 
 **(c)** In A3 you rewrote a `let` as an applied `proc`. Run both of these in
 **both** `SET` and `REF`:
@@ -429,17 +508,46 @@ expression gets a new one.
 
 ### ANSWER — (c)
 
+````
 ```
-Replace this line with your answer.
+SET & REF
+
+SET causes both of these to yield 3
+let x = 3 in let y = x in { set y = add1(y) ; x }
+let x = 3 in .proc(y) { set y = add1(y) ; x } (x)
+
+REF causes first one to yield 3 and second one to yield 4.
+The reason ref reads the second language differently is because ; x in the sequence doesn't evaluate x instead it assigns x reference which is then put into add1(x) thus becoming 4.
+
+Exp
+%%%
+def evalRef(self, env):
+    return ValRef(self.eval(env))
+%%%
+
+VarExp
+%%%
+def eval(self, env):
+    return env.applyEnv(self.symbol.lexeme)
+
+def evalRef(self, env):
+    return env.applyEnvRef(self.symbol.lexeme)
+
+def __str__(self):
+    return self.symbol.lexeme
+%%%
+
+General expressions are by default evaluated and assigned to a value reference. Variables are evaluated using a environments reference of its own lexeme which will be the same for all variables using that lexeme
 ```
+````
 
 ## Before you zip and upload your work
 
-- [ ] Every `ANSWER` block has an answer in it. An unanswered block reads as
+- [X] Every `ANSWER` block has an answer in it. An unanswered block reads as
       skipped work under **Completeness**.
-- [ ] Each answer says which language you ran it in, wherever the question
+- [X] Each answer says which language you ran it in, wherever the question
       used more than one.
-- [ ] Your drawings, `q1a`, `q2a`, `q2b`, and `q3a`, are in this directory,
+- [X] Your drawings, `q1a`, `q2a`, `q2b`, and `q3a`, are in this directory,
       and each answer block names its file.
 
 `plcc-ng/` directories are build caches. Leaving them in place costs you
