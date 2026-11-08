@@ -201,8 +201,6 @@ Let prepares the bindings then places those bindings in a created environment
 ````
 
 
-```
-
 **(b)** Use `V5`. Predict each, then run each:
 
 ```
