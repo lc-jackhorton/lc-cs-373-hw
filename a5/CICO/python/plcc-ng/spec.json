@@ -1,0 +1,4430 @@
+{
+  "lexical": {
+    "ruleList": [
+      {
+        "line": {
+          "string": "skip WHITESPACE '\\s+'\n",
+          "number": 3,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "WHITESPACE",
+        "pattern": "\\s+",
+        "isSkip": true
+      },
+      {
+        "line": {
+          "string": "skip COMMENT '%.*'\n",
+          "number": 4,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "COMMENT",
+        "pattern": "%.*",
+        "isSkip": true
+      },
+      {
+        "line": {
+          "string": "token LIT '\\d+'\n",
+          "number": 5,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "LIT",
+        "pattern": "\\d+",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token LPAREN '\\('\n",
+          "number": 6,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "LPAREN",
+        "pattern": "\\(",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token RPAREN '\\)'\n",
+          "number": 7,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "RPAREN",
+        "pattern": "\\)",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token COMMA ','\n",
+          "number": 8,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "COMMA",
+        "pattern": ",",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token ADDOP '\\+'\n",
+          "number": 9,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "ADDOP",
+        "pattern": "\\+",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token SUBOP '\\-'\n",
+          "number": 10,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "SUBOP",
+        "pattern": "\\-",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token MULOP '\\*'\n",
+          "number": 11,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "MULOP",
+        "pattern": "\\*",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token DIVOP '/'\n",
+          "number": 12,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "DIVOP",
+        "pattern": "/",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token ADD1OP 'add1'\n",
+          "number": 13,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "ADD1OP",
+        "pattern": "add1",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token SUB1OP 'sub1'\n",
+          "number": 14,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "SUB1OP",
+        "pattern": "sub1",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token ZEROP 'zero\\?'\n",
+          "number": 15,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "ZEROP",
+        "pattern": "zero\\?",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token IF 'if'\n",
+          "number": 16,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "IF",
+        "pattern": "if",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token THEN 'then'\n",
+          "number": 17,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "THEN",
+        "pattern": "then",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token ELSE 'else'\n",
+          "number": 18,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "ELSE",
+        "pattern": "else",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token LET 'let'\n",
+          "number": 19,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "LET",
+        "pattern": "let",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token LETREC 'letrec'\n",
+          "number": 20,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "LETREC",
+        "pattern": "letrec",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token DEFINE 'define'\n",
+          "number": 21,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "DEFINE",
+        "pattern": "define",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token IN 'in'\n",
+          "number": 22,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "IN",
+        "pattern": "in",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token EQUALS '='\n",
+          "number": 23,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "EQUALS",
+        "pattern": "=",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token PROC 'proc'\n",
+          "number": 24,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "PROC",
+        "pattern": "proc",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token SET 'set'\n",
+          "number": 25,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "SET",
+        "pattern": "set",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token DOT '\\.'\n",
+          "number": 26,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "DOT",
+        "pattern": "\\.",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token LBRACE '\\{'\n",
+          "number": 27,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "LBRACE",
+        "pattern": "\\{",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token RBRACE '\\}'\n",
+          "number": 28,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "RBRACE",
+        "pattern": "\\}",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token SEMI ';'\n",
+          "number": 29,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "SEMI",
+        "pattern": ";",
+        "isSkip": false
+      },
+      {
+        "line": {
+          "string": "token SYMBOL '[A-Za-z][\\w?]*'\n",
+          "number": 30,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "name": "SYMBOL",
+        "pattern": "[A-Za-z][\\w?]*",
+        "isSkip": false
+      }
+    ]
+  },
+  "syntax": {
+    "rules": [
+      {
+        "line": {
+          "string": "<Program:Define> ::= DEFINE <SYMBOL> EQUALS <Exp>\n",
+          "number": 32,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Program",
+          "isTerminal": false,
+          "altName": "Define",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "DEFINE",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "SYMBOL",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          },
+          {
+            "name": "EQUALS",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Program:Eval>   ::= <Exp>\n",
+          "number": 33,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Program",
+          "isTerminal": false,
+          "altName": "Eval",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:LitExp>     ::= <LIT>\n",
+          "number": 34,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "LitExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "LIT",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:VarExp>     ::= <SYMBOL>\n",
+          "number": 35,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "VarExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SYMBOL",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:IfExp>      ::= IF <Exp:testExp> THEN <Exp:trueExp> ELSE <Exp:falseExp>\n",
+          "number": 36,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "IfExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "IF",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": "testExp",
+            "isCapturing": true
+          },
+          {
+            "name": "THEN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": "trueExp",
+            "isCapturing": true
+          },
+          {
+            "name": "ELSE",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": "falseExp",
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:PrimappExp> ::= <Prim> LPAREN <Rands> RPAREN\n",
+          "number": 37,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "PrimappExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Prim",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "LPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Rands",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "RPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:LetExp>     ::= LET <LetDecls> IN <Exp>\n",
+          "number": 38,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "LetExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "LET",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "LetDecls",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "IN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:LetrecExp>  ::= LETREC <LetDecls> IN <Exp>\n",
+          "number": 39,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "LetrecExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "LETREC",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "LetDecls",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "IN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:ProcExp>    ::= <Proc>\n",
+          "number": 40,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "ProcExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Proc",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:AppExp>     ::= DOT <Exp> LPAREN <Rands> RPAREN\n",
+          "number": 41,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "AppExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "DOT",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "LPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Rands",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "RPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:SeqExp>     ::= LBRACE <Exp> <SeqExps> RBRACE\n",
+          "number": 42,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "SeqExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "LBRACE",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "SeqExps",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "RBRACE",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Exp:SetExp>     ::= SET <SYMBOL> EQUALS <Exp>\n",
+          "number": 43,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Exp",
+          "isTerminal": false,
+          "altName": "SetExp",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SET",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "SYMBOL",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          },
+          {
+            "name": "EQUALS",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<SeqExps>        **= SEMI <Exp>\n",
+          "number": 44,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "SeqExps",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SEMI",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ],
+        "separator": null
+      },
+      {
+        "line": {
+          "string": "<Proc>           ::= PROC LPAREN <Formals> RPAREN <Exp>\n",
+          "number": 45,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Proc",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "PROC",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "LPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Formals",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          },
+          {
+            "name": "RPAREN",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Formals>        **= <SYMBOL> +COMMA\n",
+          "number": 46,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Formals",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SYMBOL",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          }
+        ],
+        "separator": {
+          "name": "COMMA",
+          "isTerminal": true,
+          "isCapturing": false
+        }
+      },
+      {
+        "line": {
+          "string": "<LetDecls>       **= <SYMBOL> EQUALS <Exp>\n",
+          "number": 47,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "LetDecls",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SYMBOL",
+            "isTerminal": true,
+            "isCapturing": true,
+            "altName": null
+          },
+          {
+            "name": "EQUALS",
+            "isTerminal": true,
+            "isCapturing": false
+          },
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ],
+        "separator": null
+      },
+      {
+        "line": {
+          "string": "<Rands>          **= <Exp> +COMMA\n",
+          "number": 48,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Rands",
+          "isTerminal": false,
+          "altName": null,
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "Exp",
+            "isTerminal": false,
+            "altName": null,
+            "isCapturing": true
+          }
+        ],
+        "separator": {
+          "name": "COMMA",
+          "isTerminal": true,
+          "isCapturing": false
+        }
+      },
+      {
+        "line": {
+          "string": "<Prim:AddPrim>   ::= ADDOP\n",
+          "number": 49,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "AddPrim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "ADDOP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Prim:SubPrim>   ::= SUBOP\n",
+          "number": 50,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "SubPrim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SUBOP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Prim:MulPrim>   ::= MULOP\n",
+          "number": 51,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "MulPrim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "MULOP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Prim:DivPrim>   ::= DIVOP\n",
+          "number": 52,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "DivPrim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "DIVOP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Prim:Add1Prim>  ::= ADD1OP\n",
+          "number": 53,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "Add1Prim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "ADD1OP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Prim:Sub1Prim>  ::= SUB1OP\n",
+          "number": 54,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "Sub1Prim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "SUB1OP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      },
+      {
+        "line": {
+          "string": "<Prim:ZeropPrim> ::= ZEROP\n",
+          "number": 55,
+          "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\CICO\\grammar.plcc"
+        },
+        "lhs": {
+          "name": "Prim",
+          "isTerminal": false,
+          "altName": "ZeropPrim",
+          "isCapturing": false
+        },
+        "rhsSymbolList": [
+          {
+            "name": "ZEROP",
+            "isTerminal": true,
+            "isCapturing": false
+          }
+        ]
+      }
+    ]
+  },
+  "semantics": {
+    "language": "Python",
+    "codeFragmentList": [
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Env\n",
+            "number": 1,
+            "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+          },
+          "className": "Env",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 2,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "from Bindings import Bindings\n",
+              "number": 3,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 4,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 5,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "# Environment-related classes\n",
+              "number": 6,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "#\n",
+              "number": 7,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "# envRef is envVal with one level of indirection: a Binding holds a Ref\n",
+              "number": 8,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "# rather than a Val, so a binding's value can be mutated in place by\n",
+              "number": 9,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "# `set`. applyEnvRef is the primitive; applyEnv is derived from it.\n",
+              "number": 10,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "#\n",
+              "number": 11,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "# checkDuplicates returns None. That is the majority shape across the\n",
+              "number": 12,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "# seven languages that use envRef, and no caller anywhere in src/ uses a\n",
+              "number": 13,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "# return value from it. Do not restore the Set-returning variant that the\n",
+              "number": 14,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "# old flat src/Env/envRef and src/REF/envRef carried.\n",
+              "number": 15,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 16,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 17,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "class Env:\n",
+              "number": 18,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 19,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    @staticmethod\n",
+              "number": 20,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def checkDuplicates(symbolList, msg=\"\"):\n",
+              "number": 21,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        seen = set()\n",
+              "number": 22,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        for sym in symbolList:\n",
+              "number": 23,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "            s = sym.lexeme\n",
+              "number": 24,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "            if s in seen:\n",
+              "number": 25,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "                raise LanguageError(\"duplicate ID \" + s + msg)\n",
+              "number": 26,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "            seen.add(s)\n",
+              "number": 27,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 28,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    @staticmethod\n",
+              "number": 29,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def initEnv():\n",
+              "number": 30,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        from EnvNode import EnvNode\n",
+              "number": 31,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        from EnvNull import EnvNull\n",
+              "number": 32,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return EnvNode(Bindings(), EnvNull())\n",
+              "number": 33,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 34,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def lookup(self, sym):\n",
+              "number": 35,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        raise NotImplementedError\n",
+              "number": 36,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 37,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def applyEnvRef(self, sym):\n",
+              "number": 38,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        raise NotImplementedError\n",
+              "number": 39,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 40,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def applyEnv(self, sym):\n",
+              "number": 41,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return self.applyEnvRef(sym).deRef()\n",
+              "number": 42,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 43,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def extendEnvRef(self, bindings):\n",
+              "number": 44,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        from EnvNode import EnvNode\n",
+              "number": 45,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return EnvNode(bindings, self)\n",
+              "number": 46,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 47,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def add(self, binding):\n",
+              "number": 48,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        raise NotImplementedError\n",
+              "number": 49,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 50,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "EnvNode\n",
+            "number": 52,
+            "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+          },
+          "className": "EnvNode",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 53,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "from Env import Env\n",
+              "number": 54,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 55,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 56,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "class EnvNode(Env):\n",
+              "number": 57,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 58,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def __init__(self, bindings, env):\n",
+              "number": 59,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        self.bindings = bindings\n",
+              "number": 60,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        self.env = env\n",
+              "number": 61,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 62,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def lookup(self, sym):\n",
+              "number": 63,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return self.bindings.lookup(sym)\n",
+              "number": 64,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 65,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def applyEnvRef(self, sym):\n",
+              "number": 66,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        b = self.bindings.lookup(sym)\n",
+              "number": 67,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        if b is None:\n",
+              "number": 68,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "            return self.env.applyEnvRef(sym)\n",
+              "number": 69,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return b.ref\n",
+              "number": 70,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 71,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def add(self, binding):\n",
+              "number": 72,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        self.bindings.add(binding)\n",
+              "number": 73,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return self\n",
+              "number": 74,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 75,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def __str__(self):\n",
+              "number": 76,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return f\"{self.bindings}----\\n{self.env}\"\n",
+              "number": 77,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 78,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "EnvNull\n",
+            "number": 80,
+            "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+          },
+          "className": "EnvNull",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 81,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "from Env import Env\n",
+              "number": 82,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 83,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 84,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 85,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "class EnvNull(Env):\n",
+              "number": 86,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 87,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def applyEnvRef(self, sym):\n",
+              "number": 88,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"no binding for \" + sym)\n",
+              "number": 89,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 90,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def lookup(self, sym):\n",
+              "number": 91,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return None\n",
+              "number": 92,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 93,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def add(self, binding):\n",
+              "number": 94,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"no bindings to add to\")\n",
+              "number": 95,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 96,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def __str__(self):\n",
+              "number": 97,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return \"\\n\"\n",
+              "number": 98,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 99,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Binding\n",
+            "number": 101,
+            "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+          },
+          "className": "Binding",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 102,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "class Binding:\n",
+              "number": 103,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 104,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def __init__(self, id, ref):\n",
+              "number": 105,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        self.id = id\n",
+              "number": 106,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        self.ref = ref\n",
+              "number": 107,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 108,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def __str__(self):\n",
+              "number": 109,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return f\"[{self.id}:{self.ref.deRef()}]\"\n",
+              "number": 110,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 111,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Bindings\n",
+            "number": 113,
+            "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+          },
+          "className": "Bindings",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 114,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "from Binding import Binding\n",
+              "number": 115,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 116,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 117,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 118,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "class Bindings:\n",
+              "number": 119,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 120,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def __init__(self, idList=None, refList=None):\n",
+              "number": 121,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        self.bindingList = []\n",
+              "number": 122,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        if idList is not None:\n",
+              "number": 123,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "            if refList is None or len(idList) != len(refList):\n",
+              "number": 124,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "                raise LanguageError(\"list sizes mismatch\")\n",
+              "number": 125,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "            for sym, r in zip(idList, refList):\n",
+              "number": 126,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "                self.bindingList.append(Binding(sym.lexeme, r))\n",
+              "number": 127,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 128,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def lookup(self, sym):\n",
+              "number": 129,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        for b in self.bindingList:\n",
+              "number": 130,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "            if sym == b.id:\n",
+              "number": 131,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "                return b\n",
+              "number": 132,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return None\n",
+              "number": 133,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 134,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def add(self, binding):\n",
+              "number": 135,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        self.bindingList.append(binding)\n",
+              "number": 136,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 137,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def size(self):\n",
+              "number": 138,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return len(self.bindingList)\n",
+              "number": 139,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 140,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "    def __str__(self):\n",
+              "number": 141,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        s = \"\"\n",
+              "number": 142,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        for b in self.bindingList:\n",
+              "number": 143,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "            s += f\"{b}\\n\"\n",
+              "number": 144,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "        return s\n",
+              "number": 145,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 146,
+              "file": "C:\\Users\\melod\\Downloads\\languages-ng-main\\src\\a5\\Env\\envRef\\python\\env.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Val\n",
+            "number": 7,
+            "file": "spec.plcc"
+          },
+          "className": "Val",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 8,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 9,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 10,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 11,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "class Val:\n",
+              "number": 12,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 13,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    # Some Vals can be applied to a list of arguments (e.g. a ProcVal).\n",
+              "number": 14,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    # Like the evaluation of an expression, the application of a Val takes\n",
+              "number": 15,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    # place in the context of an environment, which arrives as the second\n",
+              "number": 16,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    # parameter. An applied Val may use or ignore that environment as its\n",
+              "number": 17,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    # own semantics require.\n",
+              "number": 18,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def apply(self, args, env):\n",
+              "number": 19,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(f\"Cannot apply {self}\")\n",
+              "number": 20,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 21,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def isTrue(self):\n",
+              "number": 22,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return True\n",
+              "number": 23,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 24,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def intVal(self):\n",
+              "number": 25,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(f\"{self}: not an Int\")\n",
+              "number": 26,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 27,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "IntVal\n",
+            "number": 29,
+            "file": "spec.plcc"
+          },
+          "className": "IntVal",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 30,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Val import Val\n",
+              "number": 31,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 32,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 33,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "class IntVal(Val):\n",
+              "number": 34,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 35,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def __init__(self, val):\n",
+              "number": 36,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        self.val = int(val)\n",
+              "number": 37,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 38,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def intVal(self):\n",
+              "number": 39,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return self\n",
+              "number": 40,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 41,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def __str__(self):\n",
+              "number": 42,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return str(self.val)\n",
+              "number": 43,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 44,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def isTrue(self):\n",
+              "number": 45,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return self.val != 0\n",
+              "number": 46,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 47,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Ref\n",
+            "number": 49,
+            "file": "spec.plcc"
+          },
+          "className": "Ref",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 50,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "class Ref:\n",
+              "number": 51,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 52,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    @staticmethod\n",
+              "number": 53,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def valsToRefs(valList):\n",
+              "number": 54,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        from ValRef import ValRef\n",
+              "number": 55,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return [ValRef(v) for v in valList]\n",
+              "number": 56,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 57,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def deRef(self):\n",
+              "number": 58,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise NotImplementedError\n",
+              "number": 59,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 60,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def setRef(self, v):\n",
+              "number": 61,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise NotImplementedError\n",
+              "number": 62,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 63,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def copyOut(self):\n",
+              "number": 64,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        pass\n",
+              "number": 65,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 66,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "ValRef\n",
+            "number": 68,
+            "file": "spec.plcc"
+          },
+          "className": "ValRef",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 69,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Ref import Ref\n",
+              "number": 70,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 71,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 72,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "class ValRef(Ref):\n",
+              "number": 73,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 74,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def __init__(self, val):\n",
+              "number": 75,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        self.val = val\n",
+              "number": 76,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 77,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def deRef(self):\n",
+              "number": 78,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return self.val\n",
+              "number": 79,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 80,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def setRef(self, v):\n",
+              "number": 81,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        self.val = v\n",
+              "number": 82,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return v\n",
+              "number": 83,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 84,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def __str__(self):\n",
+              "number": 85,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return str(self.val)\n",
+              "number": 86,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 87,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "VarRef\n",
+            "number": 89,
+            "file": "spec.plcc"
+          },
+          "className": "VarRef",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 90,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from ValRef import ValRef\n",
+              "number": 91,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 92,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 93,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "class VarRef(ValRef):\n",
+              "number": 94,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 95,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def __init__(self, ref):\n",
+              "number": 96,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        super().__init__(ref.deRef())   # copy in: a new ref holding a copy\n",
+              "number": 97,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        self.ref = ref                  # the variable's own ref, kept for later\n",
+              "number": 98,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 99,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def copyOut(self):\n",
+              "number": 100,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        # Put this ref's value back into the variable's own ref.\n",
+              "number": 101,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        self.ref.setRef(self.deRef())\n",
+              "number": 102,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 103,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "ProcVal\n",
+            "number": 106,
+            "file": "spec.plcc"
+          },
+          "className": "ProcVal",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 107,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Bindings import Bindings\n",
+              "number": 108,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Val import Val\n",
+              "number": 109,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 110,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 111,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 112,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "class ProcVal(Val):\n",
+              "number": 113,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 114,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def __init__(self, formals, body, env):\n",
+              "number": 115,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        self.formals = formals\n",
+              "number": 116,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        self.body = body\n",
+              "number": 117,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        self.env = env\n",
+              "number": 118,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 119,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def apply(self, args, env):\n",
+              "number": 120,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        if len(self.formals.symbolList) != len(args):\n",
+              "number": 121,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "            raise LanguageError(\"formals/args number mismatch\")\n",
+              "number": 122,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        bindings = Bindings(self.formals.symbolList, args)\n",
+              "number": 123,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        nenv = self.env.extendEnvRef(bindings)\n",
+              "number": 124,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        result = self.body.eval(nenv)\n",
+              "number": 125,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 126,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        for ref in args: \n",
+              "number": 127,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "            ref.copyOut()\n",
+              "number": 128,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 129,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return result\n",
+              "number": 130,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 131,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    def __str__(self):\n",
+              "number": 132,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return \"proc\"\n",
+              "number": 133,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 134,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Program:import\n",
+            "number": 136,
+            "file": "spec.plcc"
+          },
+          "className": "Program",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 137,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Env import Env\n",
+              "number": 138,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 139,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Program\n",
+            "number": 141,
+            "file": "spec.plcc"
+          },
+          "className": "Program",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 142,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "env = Env.initEnv()\n",
+              "number": 143,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 144,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Define:import\n",
+            "number": 146,
+            "file": "spec.plcc"
+          },
+          "className": "Define",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 147,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Binding import Binding\n",
+              "number": 148,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from ValRef import ValRef\n",
+              "number": 149,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 150,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Define\n",
+            "number": 152,
+            "file": "spec.plcc"
+          },
+          "className": "Define",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 153,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def _run(self):\n",
+              "number": 154,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    env = Program.env\n",
+              "number": 155,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    s = self.symbol.lexeme\n",
+              "number": 156,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    val = self.exp.eval(env)\n",
+              "number": 157,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    ref = ValRef(val)\n",
+              "number": 158,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    b = env.lookup(s)\n",
+              "number": 159,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if b is not None:\n",
+              "number": 160,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        b.ref = ref\n",
+              "number": 161,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    else:\n",
+              "number": 162,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        env.add(Binding(s, ref))\n",
+              "number": 163,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return s\n",
+              "number": 164,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 165,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Eval\n",
+            "number": 167,
+            "file": "spec.plcc"
+          },
+          "className": "Eval",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 168,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def _run(self):\n",
+              "number": 169,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return str(self.exp.eval(Program.env))\n",
+              "number": 170,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 171,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Exp:import\n",
+            "number": 173,
+            "file": "spec.plcc"
+          },
+          "className": "Exp",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 174,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from ValRef import ValRef\n",
+              "number": 175,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 176,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Exp\n",
+            "number": 178,
+            "file": "spec.plcc"
+          },
+          "className": "Exp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 179,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def evalRef(self, env):\n",
+              "number": 180,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return ValRef(self.eval(env))\n",
+              "number": 181,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 182,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "LitExp:import\n",
+            "number": 184,
+            "file": "spec.plcc"
+          },
+          "className": "LitExp",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 185,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from IntVal import IntVal\n",
+              "number": 186,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 187,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "LitExp\n",
+            "number": 189,
+            "file": "spec.plcc"
+          },
+          "className": "LitExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 190,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 191,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return IntVal(self.lit.lexeme)\n",
+              "number": 192,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 193,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 194,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return self.lit.lexeme\n",
+              "number": 195,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 196,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "VarExp:import\n",
+            "number": 198,
+            "file": "spec.plcc"
+          },
+          "className": "VarExp",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 199,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from VarRef import VarRef\n",
+              "number": 200,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 201,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "VarExp\n",
+            "number": 203,
+            "file": "spec.plcc"
+          },
+          "className": "VarExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 204,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 205,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return env.applyEnv(self.symbol.lexeme)\n",
+              "number": 206,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 207,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def evalRef(self, env):\n",
+              "number": 208,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return VarRef(env.applyEnvRef(self.symbol.lexeme))\n",
+              "number": 209,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 210,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 211,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return self.symbol.lexeme\n",
+              "number": 212,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 213,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "IfExp\n",
+            "number": 215,
+            "file": "spec.plcc"
+          },
+          "className": "IfExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 216,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 217,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if self.testExp.eval(env).isTrue():\n",
+              "number": 218,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return self.trueExp.eval(env)\n",
+              "number": 219,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    else:\n",
+              "number": 220,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        return self.falseExp.eval(env)\n",
+              "number": 221,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 222,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 223,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return f\"if {self.testExp} then {self.trueExp} else {self.falseExp}\"\n",
+              "number": 224,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 225,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "PrimappExp\n",
+            "number": 227,
+            "file": "spec.plcc"
+          },
+          "className": "PrimappExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 228,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 229,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    args = self.rands.evalRands(env)\n",
+              "number": 230,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return self.prim.apply(args)\n",
+              "number": 231,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 232,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 233,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return f\"{self.prim}({self.rands})\"\n",
+              "number": 234,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 235,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "LetExp\n",
+            "number": 237,
+            "file": "spec.plcc"
+          },
+          "className": "LetExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 238,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 239,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    nenv = self.letDecls.addBindings(env)\n",
+              "number": 240,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return self.exp.eval(nenv)\n",
+              "number": 241,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 242,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 243,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \" ...LetExp... \"\n",
+              "number": 244,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 245,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "LetrecExp\n",
+            "number": 247,
+            "file": "spec.plcc"
+          },
+          "className": "LetrecExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 248,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 249,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    env = self.letDecls.addLetrecBindings(env)\n",
+              "number": 250,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return self.exp.eval(env)\n",
+              "number": 251,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 252,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 253,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \" ...LetrecExp... \"\n",
+              "number": 254,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 255,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "LetDecls:import\n",
+            "number": 257,
+            "file": "spec.plcc"
+          },
+          "className": "LetDecls",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 258,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Env import Env\n",
+              "number": 259,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Binding import Binding\n",
+              "number": 260,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Bindings import Bindings\n",
+              "number": 261,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Ref import Ref\n",
+              "number": 262,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from ValRef import ValRef\n",
+              "number": 263,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 264,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "LetDecls:init\n",
+            "number": 266,
+            "file": "spec.plcc"
+          },
+          "className": "LetDecls",
+          "modifier": "init"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 267,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "Env.checkDuplicates(self.symbolList, \" in let/letrec LHS identifiers\")\n",
+              "number": 268,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 269,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "LetDecls\n",
+            "number": 271,
+            "file": "spec.plcc"
+          },
+          "className": "LetDecls",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 272,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def addBindings(self, env):\n",
+              "number": 273,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    valList = [e.eval(env) for e in self.expList]\n",
+              "number": 274,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    refList = Ref.valsToRefs(valList)\n",
+              "number": 275,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    bindings = Bindings(self.symbolList, refList)\n",
+              "number": 276,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return env.extendEnvRef(bindings)\n",
+              "number": 277,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 278,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def addLetrecBindings(self, env):\n",
+              "number": 279,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    env = env.extendEnvRef(Bindings())\n",
+              "number": 280,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    for sym, e in zip(self.symbolList, self.expList):\n",
+              "number": 281,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        val = e.eval(env)\n",
+              "number": 282,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        env.add(Binding(sym.lexeme, ValRef(val)))\n",
+              "number": 283,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return env\n",
+              "number": 284,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 285,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 286,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \" ...LetDecls... \"\n",
+              "number": 287,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 288,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "ProcExp\n",
+            "number": 290,
+            "file": "spec.plcc"
+          },
+          "className": "ProcExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 291,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 292,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return self.proc.makeClosure(env)\n",
+              "number": 293,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 294,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 295,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \" ...ProcExp... \"\n",
+              "number": 296,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 297,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Proc:import\n",
+            "number": 299,
+            "file": "spec.plcc"
+          },
+          "className": "Proc",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 300,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from ProcVal import ProcVal\n",
+              "number": 301,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 302,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Proc\n",
+            "number": 304,
+            "file": "spec.plcc"
+          },
+          "className": "Proc",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 305,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def makeClosure(self, env):\n",
+              "number": 306,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return ProcVal(self.formals, self.exp, env)\n",
+              "number": 307,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 308,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Formals:import\n",
+            "number": 310,
+            "file": "spec.plcc"
+          },
+          "className": "Formals",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 311,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from Env import Env\n",
+              "number": 312,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 313,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Formals:init\n",
+            "number": 315,
+            "file": "spec.plcc"
+          },
+          "className": "Formals",
+          "modifier": "init"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 316,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "Env.checkDuplicates(self.symbolList, \" in proc formals\")\n",
+              "number": 317,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 318,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "AppExp\n",
+            "number": 320,
+            "file": "spec.plcc"
+          },
+          "className": "AppExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 321,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 322,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    v = self.exp.eval(env)\n",
+              "number": 323,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    args = self.rands.evalRandsRef(env)\n",
+              "number": 324,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return v.apply(args, env)\n",
+              "number": 325,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 326,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 327,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \" ...AppExp... \"\n",
+              "number": 328,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 329,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "SeqExp\n",
+            "number": 331,
+            "file": "spec.plcc"
+          },
+          "className": "SeqExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 332,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 333,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    v = self.exp.eval(env)\n",
+              "number": 334,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    for e in self.seqExps.expList:\n",
+              "number": 335,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        v = e.eval(env)\n",
+              "number": 336,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return v\n",
+              "number": 337,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 338,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 339,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \" ...SeqExp... \"\n",
+              "number": 340,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 341,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "SetExp\n",
+            "number": 343,
+            "file": "spec.plcc"
+          },
+          "className": "SetExp",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 344,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def eval(self, env):\n",
+              "number": 345,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    v = self.exp.eval(env)\n",
+              "number": 346,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    ref = env.applyEnvRef(self.symbol.lexeme)\n",
+              "number": 347,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return ref.setRef(v)\n",
+              "number": 348,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 349,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 350,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \" ...SetExp... \"\n",
+              "number": 351,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 352,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Rands\n",
+            "number": 354,
+            "file": "spec.plcc"
+          },
+          "className": "Rands",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 355,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def evalRands(self, env):\n",
+              "number": 356,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return [e.eval(env) for e in self.expList]\n",
+              "number": 357,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 358,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def evalRandsRef(self, env):\n",
+              "number": 359,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return [e.evalRef(env) for e in self.expList]\n",
+              "number": 360,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 361,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 362,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \",\".join(str(e) for e in self.expList)\n",
+              "number": 363,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 364,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "AddPrim:import\n",
+            "number": 366,
+            "file": "spec.plcc"
+          },
+          "className": "AddPrim",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 367,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from IntVal import IntVal\n",
+              "number": 368,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 369,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 370,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "AddPrim\n",
+            "number": 372,
+            "file": "spec.plcc"
+          },
+          "className": "AddPrim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 373,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 374,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"+\"\n",
+              "number": 375,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 376,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def apply(self, args):\n",
+              "number": 377,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if len(args) != 2:\n",
+              "number": 378,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"two arguments expected\")\n",
+              "number": 379,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i0 = args[0].intVal().val\n",
+              "number": 380,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i1 = args[1].intVal().val\n",
+              "number": 381,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return IntVal(i0 + i1)\n",
+              "number": 382,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 383,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "SubPrim:import\n",
+            "number": 385,
+            "file": "spec.plcc"
+          },
+          "className": "SubPrim",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 386,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from IntVal import IntVal\n",
+              "number": 387,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 388,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 389,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "SubPrim\n",
+            "number": 391,
+            "file": "spec.plcc"
+          },
+          "className": "SubPrim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 392,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 393,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"-\"\n",
+              "number": 394,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 395,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def apply(self, args):\n",
+              "number": 396,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if len(args) != 2:\n",
+              "number": 397,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"two arguments expected\")\n",
+              "number": 398,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i0 = args[0].intVal().val\n",
+              "number": 399,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i1 = args[1].intVal().val\n",
+              "number": 400,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return IntVal(i0 - i1)\n",
+              "number": 401,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 402,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "MulPrim:import\n",
+            "number": 404,
+            "file": "spec.plcc"
+          },
+          "className": "MulPrim",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 405,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from IntVal import IntVal\n",
+              "number": 406,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 407,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 408,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "MulPrim\n",
+            "number": 410,
+            "file": "spec.plcc"
+          },
+          "className": "MulPrim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 411,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 412,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"*\"\n",
+              "number": 413,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 414,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def apply(self, args):\n",
+              "number": 415,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if len(args) != 2:\n",
+              "number": 416,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"two arguments expected\")\n",
+              "number": 417,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i0 = args[0].intVal().val\n",
+              "number": 418,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i1 = args[1].intVal().val\n",
+              "number": 419,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return IntVal(i0 * i1)\n",
+              "number": 420,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 421,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "DivPrim:import\n",
+            "number": 423,
+            "file": "spec.plcc"
+          },
+          "className": "DivPrim",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 424,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from IntVal import IntVal\n",
+              "number": 425,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 426,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 427,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "DivPrim\n",
+            "number": 429,
+            "file": "spec.plcc"
+          },
+          "className": "DivPrim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 430,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 431,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"/\"\n",
+              "number": 432,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 433,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def apply(self, args):\n",
+              "number": 434,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if len(args) != 2:\n",
+              "number": 435,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"two arguments expected\")\n",
+              "number": 436,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i0 = args[0].intVal().val\n",
+              "number": 437,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i1 = args[1].intVal().val\n",
+              "number": 438,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if i1 == 0:\n",
+              "number": 439,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"attempt to divide by zero\")\n",
+              "number": 440,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return IntVal(int(i0 / i1))\n",
+              "number": 441,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 442,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Add1Prim:import\n",
+            "number": 444,
+            "file": "spec.plcc"
+          },
+          "className": "Add1Prim",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 445,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from IntVal import IntVal\n",
+              "number": 446,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 447,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 448,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Add1Prim\n",
+            "number": 450,
+            "file": "spec.plcc"
+          },
+          "className": "Add1Prim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 451,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 452,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"add1\"\n",
+              "number": 453,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 454,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def apply(self, args):\n",
+              "number": 455,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if len(args) != 1:\n",
+              "number": 456,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"one argument expected\")\n",
+              "number": 457,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i0 = args[0].intVal().val\n",
+              "number": 458,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return IntVal(i0 + 1)\n",
+              "number": 459,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 460,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Sub1Prim:import\n",
+            "number": 462,
+            "file": "spec.plcc"
+          },
+          "className": "Sub1Prim",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 463,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from IntVal import IntVal\n",
+              "number": 464,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 465,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 466,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "Sub1Prim\n",
+            "number": 468,
+            "file": "spec.plcc"
+          },
+          "className": "Sub1Prim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 469,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 470,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"sub1\"\n",
+              "number": 471,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 472,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def apply(self, args):\n",
+              "number": 473,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if len(args) != 1:\n",
+              "number": 474,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"one argument expected\")\n",
+              "number": 475,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i0 = args[0].intVal().val\n",
+              "number": 476,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return IntVal(i0 - 1)\n",
+              "number": 477,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 478,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "ZeropPrim:import\n",
+            "number": 480,
+            "file": "spec.plcc"
+          },
+          "className": "ZeropPrim",
+          "modifier": "import"
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 481,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from IntVal import IntVal\n",
+              "number": 482,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "from runtime.base import LanguageError\n",
+              "number": 483,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 484,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      },
+      {
+        "targetLocator": {
+          "line": {
+            "string": "ZeropPrim\n",
+            "number": 486,
+            "file": "spec.plcc"
+          },
+          "className": "ZeropPrim",
+          "modifier": null
+        },
+        "block": {
+          "lines": [
+            {
+              "string": "%%%\n",
+              "number": 487,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def __str__(self):\n",
+              "number": 488,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return \"zero?\"\n",
+              "number": 489,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "\n",
+              "number": 490,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "def apply(self, args):\n",
+              "number": 491,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    if len(args) != 1:\n",
+              "number": 492,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "        raise LanguageError(\"one argument expected\")\n",
+              "number": 493,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    i0 = args[0].intVal().val\n",
+              "number": 494,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "    return IntVal(1 if i0 == 0 else 0)\n",
+              "number": 495,
+              "file": "spec.plcc"
+            },
+            {
+              "string": "%%%\n",
+              "number": 496,
+              "file": "spec.plcc"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

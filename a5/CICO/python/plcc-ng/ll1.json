@@ -1,0 +1,839 @@
+{
+  "is_ll1": true,
+  "start_symbol": "Program",
+  "first_sets": {
+    "Exp": [
+      "ADD1OP",
+      "ADDOP",
+      "DIVOP",
+      "DOT",
+      "IF",
+      "LBRACE",
+      "LET",
+      "LETREC",
+      "LIT",
+      "MULOP",
+      "PROC",
+      "SET",
+      "SUB1OP",
+      "SUBOP",
+      "SYMBOL",
+      "ZEROP"
+    ],
+    "Prim": [
+      "ADD1OP",
+      "ADDOP",
+      "DIVOP",
+      "MULOP",
+      "SUB1OP",
+      "SUBOP",
+      "ZEROP"
+    ],
+    "Proc": [
+      "PROC"
+    ],
+    "Program": [
+      "ADD1OP",
+      "ADDOP",
+      "DEFINE",
+      "DIVOP",
+      "DOT",
+      "IF",
+      "LBRACE",
+      "LET",
+      "LETREC",
+      "LIT",
+      "MULOP",
+      "PROC",
+      "SET",
+      "SUB1OP",
+      "SUBOP",
+      "SYMBOL",
+      "ZEROP"
+    ]
+  },
+  "follow_sets": {
+    "Exp": [
+      "COMMA",
+      "ELSE",
+      "IN",
+      "LPAREN",
+      "RBRACE",
+      "RPAREN",
+      "SEMI",
+      "SYMBOL",
+      "THEN",
+      "eof"
+    ],
+    "Prim": [
+      "LPAREN"
+    ],
+    "Proc": [
+      "COMMA",
+      "ELSE",
+      "IN",
+      "LPAREN",
+      "RBRACE",
+      "RPAREN",
+      "SEMI",
+      "SYMBOL",
+      "THEN",
+      "eof"
+    ],
+    "Program": [
+      "eof"
+    ]
+  },
+  "predict_sets": {
+    "Exp": [
+      [
+        "LIT"
+      ],
+      [
+        "SYMBOL"
+      ],
+      [
+        "IF"
+      ],
+      [
+        "ADD1OP",
+        "ADDOP",
+        "DIVOP",
+        "MULOP",
+        "SUB1OP",
+        "SUBOP",
+        "ZEROP"
+      ],
+      [
+        "LET"
+      ],
+      [
+        "LETREC"
+      ],
+      [
+        "PROC"
+      ],
+      [
+        "DOT"
+      ],
+      [
+        "LBRACE"
+      ],
+      [
+        "SET"
+      ]
+    ],
+    "Prim": [
+      [
+        "ADDOP"
+      ],
+      [
+        "SUBOP"
+      ],
+      [
+        "MULOP"
+      ],
+      [
+        "DIVOP"
+      ],
+      [
+        "ADD1OP"
+      ],
+      [
+        "SUB1OP"
+      ],
+      [
+        "ZEROP"
+      ]
+    ],
+    "Proc": [
+      [
+        "PROC"
+      ]
+    ],
+    "Program": [
+      [
+        "DEFINE"
+      ],
+      [
+        "ADD1OP",
+        "ADDOP",
+        "DIVOP",
+        "DOT",
+        "IF",
+        "LBRACE",
+        "LET",
+        "LETREC",
+        "LIT",
+        "MULOP",
+        "PROC",
+        "SET",
+        "SUB1OP",
+        "SUBOP",
+        "SYMBOL",
+        "ZEROP"
+      ]
+    ]
+  },
+  "parse_table": {
+    "Program": {
+      "DEFINE": {
+        "alt": "Define",
+        "production": [
+          {
+            "symbol": "DEFINE",
+            "field": null
+          },
+          {
+            "symbol": "SYMBOL",
+            "field": "symbol"
+          },
+          {
+            "symbol": "EQUALS",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "LET": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "SET": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "LBRACE": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "MULOP": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "ZEROP": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "SUB1OP": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "PROC": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "LIT": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "SYMBOL": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "IF": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "ADDOP": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "LETREC": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "DIVOP": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "DOT": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "SUBOP": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "ADD1OP": {
+        "alt": "Eval",
+        "production": [
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      }
+    },
+    "Exp": {
+      "LIT": {
+        "alt": "LitExp",
+        "production": [
+          {
+            "symbol": "LIT",
+            "field": "lit"
+          }
+        ]
+      },
+      "SYMBOL": {
+        "alt": "VarExp",
+        "production": [
+          {
+            "symbol": "SYMBOL",
+            "field": "symbol"
+          }
+        ]
+      },
+      "IF": {
+        "alt": "IfExp",
+        "production": [
+          {
+            "symbol": "IF",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "testExp"
+          },
+          {
+            "symbol": "THEN",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "trueExp"
+          },
+          {
+            "symbol": "ELSE",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "falseExp"
+          }
+        ]
+      },
+      "DIVOP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "MULOP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "SUB1OP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "ZEROP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "SUBOP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "ADD1OP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "ADDOP": {
+        "alt": "PrimappExp",
+        "production": [
+          {
+            "symbol": "Prim",
+            "field": "prim"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "LET": {
+        "alt": "LetExp",
+        "production": [
+          {
+            "symbol": "LET",
+            "field": null
+          },
+          {
+            "symbol": "LetDecls",
+            "field": "letDecls"
+          },
+          {
+            "symbol": "IN",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "LETREC": {
+        "alt": "LetrecExp",
+        "production": [
+          {
+            "symbol": "LETREC",
+            "field": null
+          },
+          {
+            "symbol": "LetDecls",
+            "field": "letDecls"
+          },
+          {
+            "symbol": "IN",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      },
+      "PROC": {
+        "alt": "ProcExp",
+        "production": [
+          {
+            "symbol": "Proc",
+            "field": "proc"
+          }
+        ]
+      },
+      "DOT": {
+        "alt": "AppExp",
+        "production": [
+          {
+            "symbol": "DOT",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Rands",
+            "field": "rands"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          }
+        ]
+      },
+      "LBRACE": {
+        "alt": "SeqExp",
+        "production": [
+          {
+            "symbol": "LBRACE",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          },
+          {
+            "symbol": "SeqExps",
+            "field": "seqExps"
+          },
+          {
+            "symbol": "RBRACE",
+            "field": null
+          }
+        ]
+      },
+      "SET": {
+        "alt": "SetExp",
+        "production": [
+          {
+            "symbol": "SET",
+            "field": null
+          },
+          {
+            "symbol": "SYMBOL",
+            "field": "symbol"
+          },
+          {
+            "symbol": "EQUALS",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      }
+    },
+    "Proc": {
+      "PROC": {
+        "alt": null,
+        "production": [
+          {
+            "symbol": "PROC",
+            "field": null
+          },
+          {
+            "symbol": "LPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Formals",
+            "field": "formals"
+          },
+          {
+            "symbol": "RPAREN",
+            "field": null
+          },
+          {
+            "symbol": "Exp",
+            "field": "exp"
+          }
+        ]
+      }
+    },
+    "Prim": {
+      "ADDOP": {
+        "alt": "AddPrim",
+        "production": [
+          {
+            "symbol": "ADDOP",
+            "field": null
+          }
+        ]
+      },
+      "SUBOP": {
+        "alt": "SubPrim",
+        "production": [
+          {
+            "symbol": "SUBOP",
+            "field": null
+          }
+        ]
+      },
+      "MULOP": {
+        "alt": "MulPrim",
+        "production": [
+          {
+            "symbol": "MULOP",
+            "field": null
+          }
+        ]
+      },
+      "DIVOP": {
+        "alt": "DivPrim",
+        "production": [
+          {
+            "symbol": "DIVOP",
+            "field": null
+          }
+        ]
+      },
+      "ADD1OP": {
+        "alt": "Add1Prim",
+        "production": [
+          {
+            "symbol": "ADD1OP",
+            "field": null
+          }
+        ]
+      },
+      "SUB1OP": {
+        "alt": "Sub1Prim",
+        "production": [
+          {
+            "symbol": "SUB1OP",
+            "field": null
+          }
+        ]
+      },
+      "ZEROP": {
+        "alt": "ZeropPrim",
+        "production": [
+          {
+            "symbol": "ZEROP",
+            "field": null
+          }
+        ]
+      }
+    }
+  },
+  "conflicts": [],
+  "left_recursion": [],
+  "arbno": {
+    "SeqExps": {
+      "rhs": [
+        {
+          "field": null,
+          "symbol": "SEMI",
+          "is_terminal": true
+        },
+        {
+          "field": "expList",
+          "symbol": "Exp",
+          "is_terminal": false
+        }
+      ],
+      "separator": null,
+      "lookahead": [
+        "SEMI"
+      ]
+    },
+    "Formals": {
+      "rhs": [
+        {
+          "field": "symbolList",
+          "symbol": "SYMBOL",
+          "is_terminal": true
+        }
+      ],
+      "separator": "COMMA",
+      "lookahead": [
+        "SYMBOL"
+      ]
+    },
+    "LetDecls": {
+      "rhs": [
+        {
+          "field": "symbolList",
+          "symbol": "SYMBOL",
+          "is_terminal": true
+        },
+        {
+          "field": null,
+          "symbol": "EQUALS",
+          "is_terminal": true
+        },
+        {
+          "field": "expList",
+          "symbol": "Exp",
+          "is_terminal": false
+        }
+      ],
+      "separator": null,
+      "lookahead": [
+        "SYMBOL"
+      ]
+    },
+    "Rands": {
+      "rhs": [
+        {
+          "field": "expList",
+          "symbol": "Exp",
+          "is_terminal": false
+        }
+      ],
+      "separator": "COMMA",
+      "lookahead": [
+        "ADD1OP",
+        "ADDOP",
+        "DIVOP",
+        "DOT",
+        "IF",
+        "LBRACE",
+        "LET",
+        "LETREC",
+        "LIT",
+        "MULOP",
+        "PROC",
+        "SET",
+        "SUB1OP",
+        "SUBOP",
+        "SYMBOL",
+        "ZEROP"
+      ]
+    }
+  }
+}

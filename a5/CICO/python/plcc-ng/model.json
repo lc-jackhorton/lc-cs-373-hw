@@ -1,0 +1,618 @@
+{
+  "start": "Program",
+  "classes": [
+    {
+      "name": "Program",
+      "abstract": true,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Program"
+    },
+    {
+      "name": "Define",
+      "abstract": false,
+      "extends": "Program",
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "Token",
+          "is_list": false
+        },
+        {
+          "name": "exp",
+          "type": "Exp",
+          "is_list": false
+        }
+      ],
+      "rule_name": "Define"
+    },
+    {
+      "name": "Eval",
+      "abstract": false,
+      "extends": "Program",
+      "fields": [
+        {
+          "name": "exp",
+          "type": "Exp",
+          "is_list": false
+        }
+      ],
+      "rule_name": "Eval"
+    },
+    {
+      "name": "Exp",
+      "abstract": true,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Exp"
+    },
+    {
+      "name": "LitExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "lit",
+          "type": "Token",
+          "is_list": false
+        }
+      ],
+      "rule_name": "LitExp"
+    },
+    {
+      "name": "VarExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "Token",
+          "is_list": false
+        }
+      ],
+      "rule_name": "VarExp"
+    },
+    {
+      "name": "IfExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "testExp",
+          "type": "Exp",
+          "is_list": false
+        },
+        {
+          "name": "trueExp",
+          "type": "Exp",
+          "is_list": false
+        },
+        {
+          "name": "falseExp",
+          "type": "Exp",
+          "is_list": false
+        }
+      ],
+      "rule_name": "IfExp"
+    },
+    {
+      "name": "PrimappExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "prim",
+          "type": "Prim",
+          "is_list": false
+        },
+        {
+          "name": "rands",
+          "type": "Rands",
+          "is_list": false
+        }
+      ],
+      "rule_name": "PrimappExp"
+    },
+    {
+      "name": "LetExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "letDecls",
+          "type": "LetDecls",
+          "is_list": false
+        },
+        {
+          "name": "exp",
+          "type": "Exp",
+          "is_list": false
+        }
+      ],
+      "rule_name": "LetExp"
+    },
+    {
+      "name": "LetrecExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "letDecls",
+          "type": "LetDecls",
+          "is_list": false
+        },
+        {
+          "name": "exp",
+          "type": "Exp",
+          "is_list": false
+        }
+      ],
+      "rule_name": "LetrecExp"
+    },
+    {
+      "name": "ProcExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "proc",
+          "type": "Proc",
+          "is_list": false
+        }
+      ],
+      "rule_name": "ProcExp"
+    },
+    {
+      "name": "AppExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "exp",
+          "type": "Exp",
+          "is_list": false
+        },
+        {
+          "name": "rands",
+          "type": "Rands",
+          "is_list": false
+        }
+      ],
+      "rule_name": "AppExp"
+    },
+    {
+      "name": "SeqExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "exp",
+          "type": "Exp",
+          "is_list": false
+        },
+        {
+          "name": "seqExps",
+          "type": "SeqExps",
+          "is_list": false
+        }
+      ],
+      "rule_name": "SeqExp"
+    },
+    {
+      "name": "SetExp",
+      "abstract": false,
+      "extends": "Exp",
+      "fields": [
+        {
+          "name": "symbol",
+          "type": "Token",
+          "is_list": false
+        },
+        {
+          "name": "exp",
+          "type": "Exp",
+          "is_list": false
+        }
+      ],
+      "rule_name": "SetExp"
+    },
+    {
+      "name": "SeqExps",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "expList",
+          "type": "Exp",
+          "is_list": true
+        }
+      ],
+      "rule_name": "SeqExps"
+    },
+    {
+      "name": "Proc",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "formals",
+          "type": "Formals",
+          "is_list": false
+        },
+        {
+          "name": "exp",
+          "type": "Exp",
+          "is_list": false
+        }
+      ],
+      "rule_name": "Proc"
+    },
+    {
+      "name": "Formals",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "symbolList",
+          "type": "Token",
+          "is_list": true
+        }
+      ],
+      "rule_name": "Formals"
+    },
+    {
+      "name": "LetDecls",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "symbolList",
+          "type": "Token",
+          "is_list": true
+        },
+        {
+          "name": "expList",
+          "type": "Exp",
+          "is_list": true
+        }
+      ],
+      "rule_name": "LetDecls"
+    },
+    {
+      "name": "Rands",
+      "abstract": false,
+      "extends": null,
+      "fields": [
+        {
+          "name": "expList",
+          "type": "Exp",
+          "is_list": true
+        }
+      ],
+      "rule_name": "Rands"
+    },
+    {
+      "name": "Prim",
+      "abstract": true,
+      "extends": null,
+      "fields": [],
+      "rule_name": "Prim"
+    },
+    {
+      "name": "AddPrim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "AddPrim"
+    },
+    {
+      "name": "SubPrim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "SubPrim"
+    },
+    {
+      "name": "MulPrim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "MulPrim"
+    },
+    {
+      "name": "DivPrim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "DivPrim"
+    },
+    {
+      "name": "Add1Prim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "Add1Prim"
+    },
+    {
+      "name": "Sub1Prim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "Sub1Prim"
+    },
+    {
+      "name": "ZeropPrim",
+      "abstract": false,
+      "extends": "Prim",
+      "fields": [],
+      "rule_name": "ZeropPrim"
+    }
+  ],
+  "semantic_sections": [
+    {
+      "language": "python",
+      "fragments": [
+        {
+          "class_name": "Env",
+          "kind": "file",
+          "body": "from Bindings import Bindings\nfrom runtime.base import LanguageError\n\n# Environment-related classes\n#\n# envRef is envVal with one level of indirection: a Binding holds a Ref\n# rather than a Val, so a binding's value can be mutated in place by\n# `set`. applyEnvRef is the primitive; applyEnv is derived from it.\n#\n# checkDuplicates returns None. That is the majority shape across the\n# seven languages that use envRef, and no caller anywhere in src/ uses a\n# return value from it. Do not restore the Set-returning variant that the\n# old flat src/Env/envRef and src/REF/envRef carried.\n\n\nclass Env:\n\n    @staticmethod\n    def checkDuplicates(symbolList, msg=\"\"):\n        seen = set()\n        for sym in symbolList:\n            s = sym.lexeme\n            if s in seen:\n                raise LanguageError(\"duplicate ID \" + s + msg)\n            seen.add(s)\n\n    @staticmethod\n    def initEnv():\n        from EnvNode import EnvNode\n        from EnvNull import EnvNull\n        return EnvNode(Bindings(), EnvNull())\n\n    def lookup(self, sym):\n        raise NotImplementedError\n\n    def applyEnvRef(self, sym):\n        raise NotImplementedError\n\n    def applyEnv(self, sym):\n        return self.applyEnvRef(sym).deRef()\n\n    def extendEnvRef(self, bindings):\n        from EnvNode import EnvNode\n        return EnvNode(bindings, self)\n\n    def add(self, binding):\n        raise NotImplementedError"
+        },
+        {
+          "class_name": "EnvNode",
+          "kind": "file",
+          "body": "from Env import Env\n\n\nclass EnvNode(Env):\n\n    def __init__(self, bindings, env):\n        self.bindings = bindings\n        self.env = env\n\n    def lookup(self, sym):\n        return self.bindings.lookup(sym)\n\n    def applyEnvRef(self, sym):\n        b = self.bindings.lookup(sym)\n        if b is None:\n            return self.env.applyEnvRef(sym)\n        return b.ref\n\n    def add(self, binding):\n        self.bindings.add(binding)\n        return self\n\n    def __str__(self):\n        return f\"{self.bindings}----\\n{self.env}\""
+        },
+        {
+          "class_name": "EnvNull",
+          "kind": "file",
+          "body": "from Env import Env\nfrom runtime.base import LanguageError\n\n\nclass EnvNull(Env):\n\n    def applyEnvRef(self, sym):\n        raise LanguageError(\"no binding for \" + sym)\n\n    def lookup(self, sym):\n        return None\n\n    def add(self, binding):\n        raise LanguageError(\"no bindings to add to\")\n\n    def __str__(self):\n        return \"\\n\""
+        },
+        {
+          "class_name": "Binding",
+          "kind": "file",
+          "body": "class Binding:\n\n    def __init__(self, id, ref):\n        self.id = id\n        self.ref = ref\n\n    def __str__(self):\n        return f\"[{self.id}:{self.ref.deRef()}]\""
+        },
+        {
+          "class_name": "Bindings",
+          "kind": "file",
+          "body": "from Binding import Binding\nfrom runtime.base import LanguageError\n\n\nclass Bindings:\n\n    def __init__(self, idList=None, refList=None):\n        self.bindingList = []\n        if idList is not None:\n            if refList is None or len(idList) != len(refList):\n                raise LanguageError(\"list sizes mismatch\")\n            for sym, r in zip(idList, refList):\n                self.bindingList.append(Binding(sym.lexeme, r))\n\n    def lookup(self, sym):\n        for b in self.bindingList:\n            if sym == b.id:\n                return b\n        return None\n\n    def add(self, binding):\n        self.bindingList.append(binding)\n\n    def size(self):\n        return len(self.bindingList)\n\n    def __str__(self):\n        s = \"\"\n        for b in self.bindingList:\n            s += f\"{b}\\n\"\n        return s"
+        },
+        {
+          "class_name": "Val",
+          "kind": "file",
+          "body": "from runtime.base import LanguageError\n\n\nclass Val:\n\n    # Some Vals can be applied to a list of arguments (e.g. a ProcVal).\n    # Like the evaluation of an expression, the application of a Val takes\n    # place in the context of an environment, which arrives as the second\n    # parameter. An applied Val may use or ignore that environment as its\n    # own semantics require.\n    def apply(self, args, env):\n        raise LanguageError(f\"Cannot apply {self}\")\n\n    def isTrue(self):\n        return True\n\n    def intVal(self):\n        raise LanguageError(f\"{self}: not an Int\")"
+        },
+        {
+          "class_name": "IntVal",
+          "kind": "file",
+          "body": "from Val import Val\n\n\nclass IntVal(Val):\n\n    def __init__(self, val):\n        self.val = int(val)\n\n    def intVal(self):\n        return self\n\n    def __str__(self):\n        return str(self.val)\n\n    def isTrue(self):\n        return self.val != 0"
+        },
+        {
+          "class_name": "Ref",
+          "kind": "file",
+          "body": "class Ref:\n\n    @staticmethod\n    def valsToRefs(valList):\n        from ValRef import ValRef\n        return [ValRef(v) for v in valList]\n\n    def deRef(self):\n        raise NotImplementedError\n\n    def setRef(self, v):\n        raise NotImplementedError\n\n    def copyOut(self):\n        pass"
+        },
+        {
+          "class_name": "ValRef",
+          "kind": "file",
+          "body": "from Ref import Ref\n\n\nclass ValRef(Ref):\n\n    def __init__(self, val):\n        self.val = val\n\n    def deRef(self):\n        return self.val\n\n    def setRef(self, v):\n        self.val = v\n        return v\n\n    def __str__(self):\n        return str(self.val)"
+        },
+        {
+          "class_name": "VarRef",
+          "kind": "file",
+          "body": "from ValRef import ValRef\n\n\nclass VarRef(ValRef):\n\n    def __init__(self, ref):\n        super().__init__(ref.deRef())   # copy in: a new ref holding a copy\n        self.ref = ref                  # the variable's own ref, kept for later\n\n    def copyOut(self):\n        # Put this ref's value back into the variable's own ref.\n        self.ref.setRef(self.deRef())"
+        },
+        {
+          "class_name": "ProcVal",
+          "kind": "file",
+          "body": "from Bindings import Bindings\nfrom Val import Val\nfrom runtime.base import LanguageError\n\n\nclass ProcVal(Val):\n\n    def __init__(self, formals, body, env):\n        self.formals = formals\n        self.body = body\n        self.env = env\n\n    def apply(self, args, env):\n        if len(self.formals.symbolList) != len(args):\n            raise LanguageError(\"formals/args number mismatch\")\n        bindings = Bindings(self.formals.symbolList, args)\n        nenv = self.env.extendEnvRef(bindings)\n        result = self.body.eval(nenv)\n\n        for ref in args: \n            ref.copyOut()\n\n        return result\n\n    def __str__(self):\n        return \"proc\""
+        },
+        {
+          "class_name": "Program",
+          "kind": "import",
+          "body": "from Env import Env"
+        },
+        {
+          "class_name": "Program",
+          "kind": "body",
+          "body": "env = Env.initEnv()"
+        },
+        {
+          "class_name": "Define",
+          "kind": "import",
+          "body": "from Binding import Binding\nfrom ValRef import ValRef"
+        },
+        {
+          "class_name": "Define",
+          "kind": "body",
+          "body": "def _run(self):\n    env = Program.env\n    s = self.symbol.lexeme\n    val = self.exp.eval(env)\n    ref = ValRef(val)\n    b = env.lookup(s)\n    if b is not None:\n        b.ref = ref\n    else:\n        env.add(Binding(s, ref))\n    return s"
+        },
+        {
+          "class_name": "Eval",
+          "kind": "body",
+          "body": "def _run(self):\n    return str(self.exp.eval(Program.env))"
+        },
+        {
+          "class_name": "Exp",
+          "kind": "import",
+          "body": "from ValRef import ValRef"
+        },
+        {
+          "class_name": "Exp",
+          "kind": "body",
+          "body": "def evalRef(self, env):\n    return ValRef(self.eval(env))"
+        },
+        {
+          "class_name": "LitExp",
+          "kind": "import",
+          "body": "from IntVal import IntVal"
+        },
+        {
+          "class_name": "LitExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    return IntVal(self.lit.lexeme)\n\ndef __str__(self):\n    return self.lit.lexeme"
+        },
+        {
+          "class_name": "VarExp",
+          "kind": "import",
+          "body": "from VarRef import VarRef"
+        },
+        {
+          "class_name": "VarExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    return env.applyEnv(self.symbol.lexeme)\n\ndef evalRef(self, env):\n    return VarRef(env.applyEnvRef(self.symbol.lexeme))\n\ndef __str__(self):\n    return self.symbol.lexeme"
+        },
+        {
+          "class_name": "IfExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    if self.testExp.eval(env).isTrue():\n        return self.trueExp.eval(env)\n    else:\n        return self.falseExp.eval(env)\n\ndef __str__(self):\n    return f\"if {self.testExp} then {self.trueExp} else {self.falseExp}\""
+        },
+        {
+          "class_name": "PrimappExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    args = self.rands.evalRands(env)\n    return self.prim.apply(args)\n\ndef __str__(self):\n    return f\"{self.prim}({self.rands})\""
+        },
+        {
+          "class_name": "LetExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    nenv = self.letDecls.addBindings(env)\n    return self.exp.eval(nenv)\n\ndef __str__(self):\n    return \" ...LetExp... \""
+        },
+        {
+          "class_name": "LetrecExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    env = self.letDecls.addLetrecBindings(env)\n    return self.exp.eval(env)\n\ndef __str__(self):\n    return \" ...LetrecExp... \""
+        },
+        {
+          "class_name": "LetDecls",
+          "kind": "import",
+          "body": "from Env import Env\nfrom Binding import Binding\nfrom Bindings import Bindings\nfrom Ref import Ref\nfrom ValRef import ValRef"
+        },
+        {
+          "class_name": "LetDecls",
+          "kind": "init",
+          "body": "Env.checkDuplicates(self.symbolList, \" in let/letrec LHS identifiers\")"
+        },
+        {
+          "class_name": "LetDecls",
+          "kind": "body",
+          "body": "def addBindings(self, env):\n    valList = [e.eval(env) for e in self.expList]\n    refList = Ref.valsToRefs(valList)\n    bindings = Bindings(self.symbolList, refList)\n    return env.extendEnvRef(bindings)\n\ndef addLetrecBindings(self, env):\n    env = env.extendEnvRef(Bindings())\n    for sym, e in zip(self.symbolList, self.expList):\n        val = e.eval(env)\n        env.add(Binding(sym.lexeme, ValRef(val)))\n    return env\n\ndef __str__(self):\n    return \" ...LetDecls... \""
+        },
+        {
+          "class_name": "ProcExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    return self.proc.makeClosure(env)\n\ndef __str__(self):\n    return \" ...ProcExp... \""
+        },
+        {
+          "class_name": "Proc",
+          "kind": "import",
+          "body": "from ProcVal import ProcVal"
+        },
+        {
+          "class_name": "Proc",
+          "kind": "body",
+          "body": "def makeClosure(self, env):\n    return ProcVal(self.formals, self.exp, env)"
+        },
+        {
+          "class_name": "Formals",
+          "kind": "import",
+          "body": "from Env import Env"
+        },
+        {
+          "class_name": "Formals",
+          "kind": "init",
+          "body": "Env.checkDuplicates(self.symbolList, \" in proc formals\")"
+        },
+        {
+          "class_name": "AppExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    v = self.exp.eval(env)\n    args = self.rands.evalRandsRef(env)\n    return v.apply(args, env)\n\ndef __str__(self):\n    return \" ...AppExp... \""
+        },
+        {
+          "class_name": "SeqExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    v = self.exp.eval(env)\n    for e in self.seqExps.expList:\n        v = e.eval(env)\n    return v\n\ndef __str__(self):\n    return \" ...SeqExp... \""
+        },
+        {
+          "class_name": "SetExp",
+          "kind": "body",
+          "body": "def eval(self, env):\n    v = self.exp.eval(env)\n    ref = env.applyEnvRef(self.symbol.lexeme)\n    return ref.setRef(v)\n\ndef __str__(self):\n    return \" ...SetExp... \""
+        },
+        {
+          "class_name": "Rands",
+          "kind": "body",
+          "body": "def evalRands(self, env):\n    return [e.eval(env) for e in self.expList]\n\ndef evalRandsRef(self, env):\n    return [e.evalRef(env) for e in self.expList]\n\ndef __str__(self):\n    return \",\".join(str(e) for e in self.expList)"
+        },
+        {
+          "class_name": "AddPrim",
+          "kind": "import",
+          "body": "from IntVal import IntVal\nfrom runtime.base import LanguageError"
+        },
+        {
+          "class_name": "AddPrim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"+\"\n\ndef apply(self, args):\n    if len(args) != 2:\n        raise LanguageError(\"two arguments expected\")\n    i0 = args[0].intVal().val\n    i1 = args[1].intVal().val\n    return IntVal(i0 + i1)"
+        },
+        {
+          "class_name": "SubPrim",
+          "kind": "import",
+          "body": "from IntVal import IntVal\nfrom runtime.base import LanguageError"
+        },
+        {
+          "class_name": "SubPrim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"-\"\n\ndef apply(self, args):\n    if len(args) != 2:\n        raise LanguageError(\"two arguments expected\")\n    i0 = args[0].intVal().val\n    i1 = args[1].intVal().val\n    return IntVal(i0 - i1)"
+        },
+        {
+          "class_name": "MulPrim",
+          "kind": "import",
+          "body": "from IntVal import IntVal\nfrom runtime.base import LanguageError"
+        },
+        {
+          "class_name": "MulPrim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"*\"\n\ndef apply(self, args):\n    if len(args) != 2:\n        raise LanguageError(\"two arguments expected\")\n    i0 = args[0].intVal().val\n    i1 = args[1].intVal().val\n    return IntVal(i0 * i1)"
+        },
+        {
+          "class_name": "DivPrim",
+          "kind": "import",
+          "body": "from IntVal import IntVal\nfrom runtime.base import LanguageError"
+        },
+        {
+          "class_name": "DivPrim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"/\"\n\ndef apply(self, args):\n    if len(args) != 2:\n        raise LanguageError(\"two arguments expected\")\n    i0 = args[0].intVal().val\n    i1 = args[1].intVal().val\n    if i1 == 0:\n        raise LanguageError(\"attempt to divide by zero\")\n    return IntVal(int(i0 / i1))"
+        },
+        {
+          "class_name": "Add1Prim",
+          "kind": "import",
+          "body": "from IntVal import IntVal\nfrom runtime.base import LanguageError"
+        },
+        {
+          "class_name": "Add1Prim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"add1\"\n\ndef apply(self, args):\n    if len(args) != 1:\n        raise LanguageError(\"one argument expected\")\n    i0 = args[0].intVal().val\n    return IntVal(i0 + 1)"
+        },
+        {
+          "class_name": "Sub1Prim",
+          "kind": "import",
+          "body": "from IntVal import IntVal\nfrom runtime.base import LanguageError"
+        },
+        {
+          "class_name": "Sub1Prim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"sub1\"\n\ndef apply(self, args):\n    if len(args) != 1:\n        raise LanguageError(\"one argument expected\")\n    i0 = args[0].intVal().val\n    return IntVal(i0 - 1)"
+        },
+        {
+          "class_name": "ZeropPrim",
+          "kind": "import",
+          "body": "from IntVal import IntVal\nfrom runtime.base import LanguageError"
+        },
+        {
+          "class_name": "ZeropPrim",
+          "kind": "body",
+          "body": "def __str__(self):\n    return \"zero?\"\n\ndef apply(self, args):\n    if len(args) != 1:\n        raise LanguageError(\"one argument expected\")\n    i0 = args[0].intVal().val\n    return IntVal(1 if i0 == 0 else 0)"
+        }
+      ]
+    }
+  ]
+}
